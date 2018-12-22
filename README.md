@@ -63,13 +63,13 @@ The possibilities are literally **infinite**!
 
 In render window:
 
-  - <kbd>Shift</kbd>+<kbd>Up</kbd> or <kbd>Q</kbd> / <kbd>Shift</kbd>+<kbd>Down</kbd> or <kbd>Z</kbd>: Move Camera Forward / Backward
-  - <kbd>Shift</kbd>+<kbd>Left</kbd> or <kbd>A</kbd> / <kbd>Shift</kbd>+<kbd>Right</kbd> or <kbd>D</kbd>: Move Camera Left / Right
-  - <kbd>W</kbd> / <kbd>S</kbd>: Move Camera Up / Down
-  - <kbd>Up</kbd> / <kbd>Down</kbd> / <kbd>Left</kbd> / <kbd>Right</kbd>: Rotate Camera
-  - <kbd>Ctrl</kbd>+(<kbd>Left</kbd> / <kbd>Right</kbd>): Roll Camera Left / Right
+  - <kbd>Up</kbd> / <kbd>Down</kbd>: move camera forward / backward
+  - <kbd>Left</kbd> / <kbd>Right</kbd>: move camera left / right
+  - <kbd>Ctrl</kbd>+(<kbd>Up</kbd> / <kbd>Down</kbd>): move camera up / down
+  - <kbd>Shift</kbd>+(<kbd>Up</kbd> / <kbd>Down</kbd> / <kbd>Left</kbd> / <kbd>Right</kbd>): rotate camera
+  - <kbd>Ctrl</kbd>+(<kbd>Left</kbd> / <kbd>Right</kbd>): roll camera left / right
 
-## Building and Deploying 
+## Building and Deploying
 
 Download the latest stable version from [Releases](https://github.com/buddhi1980/mandelbulber2/releases)
 
