@@ -170,7 +170,10 @@
        </layout>
       </item>
       <item>
-       <widget class="MyGroupBox" name="checkBox_transf_function_enabled_false">
+       <widget class="MyGroupBox" name="groupCheck_transf_function_enabled_false">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <property name="title">
          <string>enable use of v&amp;alue parameters</string>
         </property>
@@ -2034,7 +2037,7 @@ offset:</string>
             <number>2</number>
            </property>
            <item row="3" column="0" colspan="2">
-            <widget class="QCheckBox" name="checkBox_transf_function_enabledM_false">
+            <widget class="MyCheckBox" name="checkBox_transf_function_enabledM_false">
              <property name="text">
               <string>enable var&amp;y scale mode B</string>
              </property>
@@ -2193,12 +2196,12 @@ offset:</string>
        </layout>
       </item>
       <item>
-       <layout class="QGridLayout" name="gridLayout_25" columnstretch="0,0,0,0">
+       <layout class="QGridLayout" name="gridLayout_25" columnstretch="0,0,0,1">
         <property name="spacing">
          <number>2</number>
         </property>
         <item row="0" column="3">
-         <widget class="QComboBox" name="comboBox_mandelbulbMulti_order_of_xyz">
+         <widget class="MyComboBox" name="comboBox_mandelbulbMulti_order_of_xyz">
           <item>
            <property name="text">
             <string notr="true">xyz</string>
@@ -2232,7 +2235,7 @@ offset:</string>
          </widget>
         </item>
         <item row="0" column="0" colspan="2">
-         <widget class="QCheckBox" name="checkBox_transf_alternate_enabled_false">
+         <widget class="MyCheckBox" name="checkBox_transf_alternate_enabled_false">
           <property name="text">
            <string>alternate swap</string>
           </property>
@@ -2420,17 +2423,31 @@ offset:</string>
            <property name="spacing">
             <number>2</number>
            </property>
-           <item row="4" column="0">
-            <widget class="QLabel" name="label_52">
-             <property name="text">
-              <string notr="true">gamma</string>
+           <item row="3" column="1">
+            <widget class="MyDoubleSpinBox" name="spinboxd3_transf_rotation_y">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
              </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QLabel" name="label_53">
-             <property name="text">
-              <string notr="true">beta</string>
+             <property name="prefix">
+              <string/>
+             </property>
+             <property name="suffix">
+              <string/>
+             </property>
+             <property name="decimals">
+              <number>6</number>
+             </property>
+             <property name="minimum">
+              <double>-36000.000000000000000</double>
+             </property>
+             <property name="maximum">
+              <double>36000.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>1.000000000000000</double>
              </property>
             </widget>
            </item>
@@ -2469,31 +2486,10 @@ offset:</string>
              </property>
             </widget>
            </item>
-           <item row="3" column="1">
-            <widget class="MyDoubleSpinBox" name="spinboxd3_transf_rotation_y">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="prefix">
-              <string/>
-             </property>
-             <property name="suffix">
-              <string/>
-             </property>
-             <property name="decimals">
-              <number>6</number>
-             </property>
-             <property name="minimum">
-              <double>-36000.000000000000000</double>
-             </property>
-             <property name="maximum">
-              <double>36000.000000000000000</double>
-             </property>
-             <property name="singleStep">
-              <double>1.000000000000000</double>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_52">
+             <property name="text">
+              <string notr="true">gamma</string>
              </property>
             </widget>
            </item>
@@ -2522,6 +2518,13 @@ offset:</string>
              </property>
              <property name="singleStep">
               <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_53">
+             <property name="text">
+              <string notr="true">beta</string>
              </property>
             </widget>
            </item>
@@ -2747,7 +2750,7 @@ offset:</string>
        </layout>
       </item>
       <item>
-       <widget class="QCheckBox" name="checkBox_transf_function_enabledCx_false">
+       <widget class="MyCheckBox" name="checkBox_transf_function_enabledCx_false">
         <property name="text">
          <string>enable aux.color mode 2</string>
         </property>
@@ -2855,7 +2858,7 @@ offset:</string>
   &lt;span style=&quot;color:#676767&quot;&gt;}&lt;/span&gt;
   &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;else&lt;/span&gt;
   &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
-
+    &lt;span style=&quot;color:#2929cc&quot;&gt;// TODO recode the following&lt;/span&gt;
     &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x &lt;span style=&quot;color:#676767&quot;&gt;&amp;gt;&lt;/span&gt; limit4&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
     &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
       z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; value4&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x &lt;span style=&quot;color:#676767&quot;&gt;-&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
@@ -3115,6 +3118,16 @@ offset:</string>
    <class>MySpinBox</class>
    <extends>QSpinBox</extends>
    <header>my_spin_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>my_check_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyComboBox</class>
+   <extends>QComboBox</extends>
+   <header>my_combo_box.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

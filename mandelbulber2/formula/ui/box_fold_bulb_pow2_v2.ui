@@ -692,7 +692,7 @@ offset:</string>
             <number>2</number>
            </property>
            <item row="3" column="0" colspan="2">
-            <widget class="QCheckBox" name="checkBox_transf_function_enabledM_false">
+            <widget class="MyCheckBox" name="checkBox_transf_function_enabledM_false">
              <property name="text">
               <string>enable vary scale mode B</string>
              </property>
@@ -935,10 +935,10 @@ offset:</string>
            <number>2</number>
           </property>
           <property name="minimum">
-           <double>-36000.000000000000000</double>
+           <double>0.000000000000000</double>
           </property>
           <property name="maximum">
-           <double>36000.000000000000000</double>
+           <double>99.989999999999995</double>
           </property>
           <property name="singleStep">
            <double>0.100000000000000</double>
@@ -963,10 +963,10 @@ offset:</string>
            <number>2</number>
           </property>
           <property name="minimum">
-           <double>-36000.000000000000000</double>
+           <double>-99.989999999999995</double>
           </property>
           <property name="maximum">
-           <double>36000.000000000000000</double>
+           <double>99.989999999999995</double>
           </property>
           <property name="singleStep">
            <double>0.100000000000000</double>
@@ -991,10 +991,10 @@ offset:</string>
            <number>2</number>
           </property>
           <property name="minimum">
-           <double>-36000.000000000000000</double>
+           <double>-99.989999999999995</double>
           </property>
           <property name="maximum">
-           <double>36000.000000000000000</double>
+           <double>99.989999999999995</double>
           </property>
           <property name="singleStep">
            <double>0.100000000000000</double>
@@ -1341,7 +1341,7 @@ offset:</string>
                &lt;span style=&quot;color:#676767&quot;&gt;/&lt;/span&gt; SQRT_3
              &lt;span style=&quot;color:#676767&quot;&gt;+&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;analyticDE&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;offset1&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
 
-    z &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; z &lt;span style=&quot;color:#676767&quot;&gt;*&lt;/span&gt; &lt;span style=&quot;color:#ff1493&quot;&gt;2.0&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+    z &lt;span style=&quot;color:#676767&quot;&gt;*=&lt;/span&gt; &lt;span style=&quot;color:#ff1493&quot;&gt;2.0&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
     &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;double&lt;/span&gt; x2 &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x &lt;span style=&quot;color:#676767&quot;&gt;*&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
     &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;double&lt;/span&gt; y2 &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y &lt;span style=&quot;color:#676767&quot;&gt;*&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
     &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;double&lt;/span&gt; z2 &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z &lt;span style=&quot;color:#676767&quot;&gt;*&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
@@ -1428,6 +1428,11 @@ offset:</string>
    <class>MySpinBox</class>
    <extends>QSpinBox</extends>
    <header>my_spin_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>my_check_box.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

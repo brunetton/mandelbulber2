@@ -57,8 +57,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>546</width>
-            <height>628</height>
+            <width>542</width>
+            <height>622</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_general">
@@ -212,7 +212,7 @@
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QComboBox" name="comboBox_ui_style_type"/>
+                 <widget class="MyComboBox" name="comboBox_ui_style_type"/>
                 </item>
                 <item row="0" column="0">
                  <widget class="QLabel" name="label_11">
@@ -229,7 +229,7 @@
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QComboBox" name="comboBox_ui_skin">
+                 <widget class="MyComboBox" name="comboBox_ui_skin">
                   <item>
                    <property name="text">
                     <string>normal</string>
@@ -443,7 +443,7 @@
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QComboBox" name="comboBox_threads_priority">
+                 <widget class="MyComboBox" name="comboBox_threads_priority">
                   <property name="frame">
                    <bool>true</bool>
                   </property>
@@ -520,14 +520,14 @@
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="checkBox_quit_do_not_ask_again">
+            <widget class="MyCheckBox" name="checkBox_quit_do_not_ask_again">
              <property name="text">
               <string>Do not ask for quit confirmation</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="checkBox_description_popup_do_not_show_again">
+            <widget class="MyCheckBox" name="checkBox_description_popup_do_not_show_again">
              <property name="text">
               <string>Do not show description on settings load</string>
              </property>
@@ -585,8 +585,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>546</width>
-            <height>628</height>
+            <width>542</width>
+            <height>622</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_image">
@@ -664,7 +664,7 @@
                  </widget>
                 </item>
                 <item row="1" column="0">
-                 <widget class="QCheckBox" name="checkBox_color_enabled">
+                 <widget class="MyCheckBox" name="checkBox_color_enabled">
                   <property name="text">
                    <string>Color</string>
                   </property>
@@ -674,7 +674,7 @@
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QComboBox" name="comboBox_color_quality">
+                 <widget class="MyComboBox" name="comboBox_color_quality">
                   <item>
                    <property name="text">
                     <string>8 bit</string>
@@ -700,14 +700,14 @@
                  </widget>
                 </item>
                 <item row="2" column="0">
-                 <widget class="QCheckBox" name="checkBox_alpha_enabled">
+                 <widget class="MyCheckBox" name="checkBox_alpha_enabled">
                   <property name="text">
                    <string>Alpha</string>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QComboBox" name="comboBox_alpha_quality">
+                 <widget class="MyComboBox" name="comboBox_alpha_quality">
                   <item>
                    <property name="text">
                     <string>8 bit</string>
@@ -733,14 +733,14 @@
                  </widget>
                 </item>
                 <item row="3" column="0">
-                 <widget class="QCheckBox" name="checkBox_zbuffer_enabled">
+                 <widget class="MyCheckBox" name="checkBox_zbuffer_enabled">
                   <property name="text">
                    <string>Z Buffer</string>
                   </property>
                  </widget>
                 </item>
                 <item row="3" column="1">
-                 <widget class="QComboBox" name="comboBox_zbuffer_quality">
+                 <widget class="MyComboBox" name="comboBox_zbuffer_quality">
                   <item>
                    <property name="text">
                     <string>8 bit</string>
@@ -774,14 +774,14 @@ and will only be present after enabling and re-render.</string>
                  </widget>
                 </item>
                 <item row="5" column="0">
-                 <widget class="QCheckBox" name="checkBox_normal_enabled">
+                 <widget class="MyCheckBox" name="checkBox_normal_enabled">
                   <property name="text">
                    <string>Surface Normal</string>
                   </property>
                  </widget>
                 </item>
                 <item row="5" column="1">
-                 <widget class="QComboBox" name="comboBox_normal_quality">
+                 <widget class="MyComboBox" name="comboBox_normal_quality">
                   <item>
                    <property name="text">
                     <string>8 bit</string>
@@ -801,6 +801,39 @@ and will only be present after enabling and re-render.</string>
                 </item>
                 <item row="5" column="2">
                  <widget class="MyLineEdit" name="text_normal_postfix">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <widget class="MyCheckBox" name="checkBox_specular_enabled">
+                  <property name="text">
+                   <string>Specular</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="MyComboBox" name="comboBox_specular_quality">
+                  <item>
+                   <property name="text">
+                    <string>8 bit</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>16 bit</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>32 bit</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item row="6" column="2">
+                 <widget class="MyLineEdit" name="text_specular_postfix">
                   <property name="text">
                    <string/>
                   </property>
@@ -855,21 +888,21 @@ and will only be present after enabling and re-render.</string>
                  </widget>
                 </item>
                 <item row="1" column="0" colspan="2">
-                 <widget class="QCheckBox" name="checkBox_append_alpha_png">
+                 <widget class="MyCheckBox" name="checkBox_append_alpha_png">
                   <property name="text">
                    <string>Append alpha to image (only PNG and TIFF)</string>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="0" colspan="2">
-                 <widget class="QCheckBox" name="checkBox_linear_colorspace">
+                 <widget class="MyCheckBox" name="checkBox_linear_colorspace">
                   <property name="text">
                    <string>Use linear colorspace (only EXR)</string>
                   </property>
                  </widget>
                 </item>
                 <item row="3" column="0" colspan="2">
-                 <widget class="QCheckBox" name="checkBox_stereoscopic_in_separate_files">
+                 <widget class="MyCheckBox" name="checkBox_stereoscopic_in_separate_files">
                   <property name="text">
                    <string>Save stereoscopic left and right images in separate files
 (stereoscopic mode has to be &quot;left-right&quot;)</string>
@@ -982,9 +1015,9 @@ and will only be present after enabling and re-render.</string>
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>0</y>
-            <width>528</width>
-            <height>809</height>
+            <y>-256</y>
+            <width>565</width>
+            <height>864</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_OpenCL">
@@ -1040,7 +1073,7 @@ and will only be present after enabling and re-render.</string>
                  <number>2</number>
                 </property>
                 <item row="2" column="1" colspan="2">
-                 <widget class="QComboBox" name="comboBox_opencl_precision">
+                 <widget class="MyComboBox" name="comboBox_opencl_precision">
                   <property name="enabled">
                    <bool>false</bool>
                   </property>
@@ -1059,14 +1092,14 @@ and will only be present after enabling and re-render.</string>
                   </item>
                  </widget>
                 </item>
-                <item row="3" column="0">
+                <item row="4" column="0">
                  <widget class="QLabel" name="label_opencl_memory_limit">
                   <property name="text">
                    <string>Memory Limit:</string>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="1">
+                <item row="4" column="1">
                  <widget class="QSlider" name="sliderInt_opencl_memory_limit">
                   <property name="minimum">
                    <number>1</number>
@@ -1085,7 +1118,7 @@ and will only be present after enabling and re-render.</string>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="2">
+                <item row="4" column="2">
                  <widget class="MySpinBox" name="spinboxInt_opencl_memory_limit">
                   <property name="toolTip">
                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Memory limit for single memory buffer used by OpenCL programs.&lt;/p&gt;&lt;p&gt;It should be set not higher than suggested memory limit showed below.&lt;/p&gt;&lt;p&gt;If SSAO or DOF effects need more memory than limit, they will be rendered using CPU.&lt;/p&gt;&lt;p&gt;Higher memory limit can allow rendering SSAO and DOF effects using GPU at higher resolution, but program can produce errors or be unstable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1115,7 +1148,7 @@ and will only be present after enabling and re-render.</string>
                 <item row="1" column="1" colspan="2">
                  <layout class="QVBoxLayout" name="verticalLayout_opencl_device">
                   <item>
-                   <widget class="QComboBox" name="comboBox_opencl_device_type">
+                   <widget class="MyComboBox" name="comboBox_opencl_device_type">
                     <item>
                      <property name="text">
                       <string>All GPU devices</string>
@@ -1181,8 +1214,8 @@ and will only be present after enabling and re-render.</string>
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="0" colspan="3">
-                 <widget class="QCheckBox" name="checkBox_opencl_disable_build_cache">
+                <item row="7" column="0" colspan="3">
+                 <widget class="MyCheckBox" name="checkBox_opencl_disable_build_cache">
                   <property name="toolTip">
                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;It disables 'compute cache' used by NVidia driver. It is sometimes needed to use this option to refresh precompiled OpenCL programs after changing OpenCL source files (e.g. after upgrade of the program).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
@@ -1191,8 +1224,8 @@ and will only be present after enabling and re-render.</string>
                   </property>
                  </widget>
                 </item>
-                <item row="5" column="0" colspan="3">
-                 <widget class="QCheckBox" name="checkBox_opencl_use_fast_relaxed_math">
+                <item row="6" column="0" colspan="3">
+                 <widget class="MyCheckBox" name="checkBox_opencl_use_fast_relaxed_math">
                   <property name="toolTip">
                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;It enables -cl-fast-relaxed-math OpenCL flag. It provides additional speed by removing some checks to the math operations like division by zero or Not-a-Number. In some cases it can lead to unpredictable results.&lt;/p&gt;&lt;p&gt;It is needed to restart the program to apply this option.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
@@ -1201,13 +1234,33 @@ and will only be present after enabling and re-render.</string>
                   </property>
                  </widget>
                 </item>
-                <item row="4" column="0" colspan="3">
+                <item row="5" column="0" colspan="3">
                  <widget class="QLabel" name="label_opencl_suggested_memory_limit">
                   <property name="text">
                    <string>Suggested memory limit:</string>
                   </property>
                   <property name="wordWrap">
                    <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="2">
+                 <widget class="MySpinBox" name="spinboxInt_opencl_job_size_multiplier">
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Job size multiplier increases size of OpenCL jobs (size of tiles).&lt;/p&gt;&lt;p&gt;Higher value can increase rendering speed, but too high can slow down rendering.&lt;/p&gt;&lt;p&gt;Too high value can cause higher GPU memory usage makeing the program unstable. It also increases the time of rendering a single tile, which can cause GPU driver timeouts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="maximum">
+                   <number>100000</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0" colspan="2">
+                 <widget class="QLabel" name="label_opencl_memory_limit_2">
+                  <property name="text">
+                   <string>Job size multiplier:</string>
                   </property>
                  </widget>
                 </item>
@@ -1258,11 +1311,6 @@ and will only be present after enabling and re-render.</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>MyDoubleSpinBox</class>
-   <extends>QDoubleSpinBox</extends>
-   <header>my_double_spin_box.h</header>
-  </customwidget>
-  <customwidget>
    <class>MyGroupBox</class>
    <extends>QGroupBox</extends>
    <header>my_group_box.h</header>
@@ -1274,9 +1322,24 @@ and will only be present after enabling and re-render.</string>
    <header>my_spin_box.h</header>
   </customwidget>
   <customwidget>
+   <class>MyCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>my_check_box.h</header>
+  </customwidget>
+  <customwidget>
    <class>MyLineEdit</class>
    <extends>QLineEdit</extends>
    <header>my_line_edit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyComboBox</class>
+   <extends>QComboBox</extends>
+   <header>my_combo_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyDoubleSpinBox</class>
+   <extends>QDoubleSpinBox</extends>
+   <header>my_double_spin_box.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
@@ -1313,6 +1376,9 @@ and will only be present after enabling and re-render.</string>
   <tabstop>checkBox_normal_enabled</tabstop>
   <tabstop>comboBox_normal_quality</tabstop>
   <tabstop>text_normal_postfix</tabstop>
+  <tabstop>checkBox_specular_enabled</tabstop>
+  <tabstop>comboBox_specular_quality</tabstop>
+  <tabstop>text_specular_postfix</tabstop>
   <tabstop>spinboxInt_jpeg_quality</tabstop>
   <tabstop>checkBox_append_alpha_png</tabstop>
   <tabstop>pushButton_clear_thumbnail_cache</tabstop>

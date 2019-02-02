@@ -197,6 +197,15 @@ sFractal::sFractal(const cParameterContainer *container)
 	aSurf3Folds.orderOf3Folds3 =
 		enumMulti_orderOf3Folds(container->Get<int>("aSurf3Folds_order_of_folds_3"));
 
+	// combo4 multi
+	combo4.combo4 = enumMulti_combo4(container->Get<int>("combo4"));
+
+	// combo5 multi
+	combo5.combo5 = enumMulti_combo5(container->Get<int>("combo5"));
+
+	// combo6 multi
+	combo6.combo6 = enumMulti_combo6(container->Get<int>("combo6"));
+
 	// benesi mag transforms
 	magTransf.orderOfTransf1 =
 		enumMulti_orderOfTransf(container->Get<int>("magTransf_order_of_transf_1"));
@@ -304,8 +313,8 @@ sFractal::sFractal(const cParameterContainer *container)
 	transformCommon.scaleE1 = container->Get<double>("transf_scaleE_1");
 	transformCommon.scaleF1 = container->Get<double>("transf_scaleF_1");
 	transformCommon.scaleG1 = container->Get<double>("transf_scaleG_1");
-	transformCommon.scaleA2 = container->Get<double>("transf_scaleA_2");
 	transformCommon.scale015 = container->Get<double>("transf_scale_015");
+	transformCommon.scaleA2 = container->Get<double>("transf_scaleA_2");
 	transformCommon.scale2 = container->Get<double>("transf_scale_2");
 	transformCommon.scale3 = container->Get<double>("transf_scale_3");
 	transformCommon.scaleA3 = container->Get<double>("transf_scaleA_3");
@@ -420,6 +429,7 @@ sFractal::sFractal(const cParameterContainer *container)
 	transformCommon.offset000 = CVector4(container->Get<CVector3>("transf_offset_000"), 0.0);
 	transformCommon.offsetA000 = CVector4(container->Get<CVector3>("transf_offsetA_000"), 0.0);
 	transformCommon.offsetF000 = CVector4(container->Get<CVector3>("transf_offsetF_000"), 0.0);
+	transformCommon.offset010 = CVector4(container->Get<CVector3>("transf_offset_010"), 0.0);
 	transformCommon.offset100 = CVector4(container->Get<CVector3>("transf_offset_100"), 0.0);
 	transformCommon.offset1105 = CVector4(container->Get<CVector3>("transf_offset_1105"), 0.0);
 	transformCommon.offset111 = CVector4(container->Get<CVector3>("transf_offset_111"), 0.0);
@@ -456,6 +466,7 @@ sFractal::sFractal(const cParameterContainer *container)
 	transformCommon.offset0000 = container->Get<CVector4>("transf_offset_0000");
 	transformCommon.offset1111 = container->Get<CVector4>("transf_offset_1111");
 	transformCommon.offsetA1111 = container->Get<CVector4>("transf_offsetA_1111");
+	transformCommon.offset2222 = container->Get<CVector4>("transf_offset_2222");
 	transformCommon.additionConstant111d5 =
 		container->Get<CVector4>("transf_addition_constant_111d5");
 	transformCommon.constantMultiplier1220 =

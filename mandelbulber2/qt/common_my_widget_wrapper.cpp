@@ -67,32 +67,36 @@ void CommonMyWidgetWrapper::contextMenuEvent(QContextMenuEvent *event, QMenu *ex
 
 	if (parameterContainer)
 	{
-		if (gAnimFrames->IndexOnList(getFullParameterName(), parameterContainer->GetContainerName())
-				== -1)
+		enumParameterType parameterType = parameterContainer->GetParameterType(getFullParameterName());
+		if (parameterType == parameterContainer::paramStandard)
 		{
-			actionAddToFlightAnimation = menu->addAction(
-				QCoreApplication::translate("CommonMyWidgetWrapper", "Add to flight animation"));
-			actionAddToFlightAnimation->setIcon(iconAdd);
-		}
-		else
-		{
-			actionRemoveFromFlightAnimation = menu->addAction(
-				QCoreApplication::translate("CommonMyWidgetWrapper", "Remove from flight animation"));
-			actionRemoveFromFlightAnimation->setIcon(iconDelete);
-		}
+			if (gAnimFrames->IndexOnList(getFullParameterName(), parameterContainer->GetContainerName())
+					== -1)
+			{
+				actionAddToFlightAnimation = menu->addAction(
+					QCoreApplication::translate("CommonMyWidgetWrapper", "Add to flight animation"));
+				actionAddToFlightAnimation->setIcon(iconAdd);
+			}
+			else
+			{
+				actionRemoveFromFlightAnimation = menu->addAction(
+					QCoreApplication::translate("CommonMyWidgetWrapper", "Remove from flight animation"));
+				actionRemoveFromFlightAnimation->setIcon(iconDelete);
+			}
 
-		if (gKeyframes->IndexOnList(getFullParameterName(), parameterContainer->GetContainerName())
-				== -1)
-		{
-			actionAddToKeyframeAnimation = menu->addAction(
-				QCoreApplication::translate("CommonMyWidgetWrapper", "Add to keyframe animation"));
-			actionAddToKeyframeAnimation->setIcon(iconAdd);
-		}
-		else
-		{
-			actionRemoveFromKeyframeAnimation = menu->addAction(
-				QCoreApplication::translate("CommonMyWidgetWrapper", "Remove from keyframe animation"));
-			actionRemoveFromKeyframeAnimation->setIcon(iconDelete);
+			if (gKeyframes->IndexOnList(getFullParameterName(), parameterContainer->GetContainerName())
+					== -1)
+			{
+				actionAddToKeyframeAnimation = menu->addAction(
+					QCoreApplication::translate("CommonMyWidgetWrapper", "Add to keyframe animation"));
+				actionAddToKeyframeAnimation->setIcon(iconAdd);
+			}
+			else
+			{
+				actionRemoveFromKeyframeAnimation = menu->addAction(
+					QCoreApplication::translate("CommonMyWidgetWrapper", "Remove from keyframe animation"));
+				actionRemoveFromKeyframeAnimation->setIcon(iconDelete);
+			}
 		}
 
 		const QAction *selectedItem = menu->exec(event->globalPos());
@@ -153,4 +157,9 @@ QString CommonMyWidgetWrapper::GetType(const QString &name)
 {
 	int firstDashPosition = name.indexOf("_");
 	return name.left(firstDashPosition);
+}
+
+QString CommonMyWidgetWrapper::getParameterContainerName()
+{
+	return parameterContainer->GetContainerName();
 }

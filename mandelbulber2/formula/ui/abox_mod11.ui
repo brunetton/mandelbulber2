@@ -101,7 +101,7 @@
        </layout>
       </item>
       <item>
-       <widget class="QCheckBox" name="checkBox_transf_function_enabled">
+       <widget class="MyCheckBox" name="checkBox_transf_function_enabled">
         <property name="text">
          <string notr="true">disable for aSurf mode</string>
         </property>
@@ -399,7 +399,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QCheckBox" name="checkBox_transf_function_enabledSw_false">
+    <widget class="MyCheckBox" name="checkBox_transf_function_enabledSw_false">
      <property name="font">
       <font>
        <weight>50</weight>
@@ -960,14 +960,14 @@ offset:</string>
             </widget>
            </item>
            <item row="2" column="0" colspan="4">
-            <widget class="QCheckBox" name="checkBox_Cpara_enabledCurves">
+            <widget class="MyCheckBox" name="checkBox_Cpara_enabledCurves">
              <property name="text">
               <string>Curvi function (disable to use linear slopes only)</string>
              </property>
             </widget>
            </item>
            <item row="1" column="0" colspan="4">
-            <widget class="QCheckBox" name="checkBox_Cpara_enabledLinear">
+            <widget class="MyCheckBox" name="checkBox_Cpara_enabledLinear">
              <property name="text">
               <string>Linear slopes</string>
              </property>
@@ -1498,7 +1498,7 @@ offset:</string>
          <number>2</number>
         </property>
         <item row="0" column="0" colspan="2">
-         <widget class="QCheckBox" name="checkBox_transf_alternate_enabled_false">
+         <widget class="MyCheckBox" name="checkBox_transf_alternate_enabled_false">
           <property name="text">
            <string>alternate swap</string>
           </property>
@@ -1617,7 +1617,7 @@ offset:</string>
          </widget>
         </item>
         <item row="1" column="3">
-         <widget class="QComboBox" name="comboBox_mandelbulbMulti_order_of_xyz">
+         <widget class="MyComboBox" name="comboBox_mandelbulbMulti_order_of_xyz">
           <item>
            <property name="text">
             <string notr="true">xyz</string>
@@ -2293,7 +2293,7 @@ offset:</string>
 &lt;a href=&quot;This formula contains aux.color and aux.actualScale&quot;&gt;This formula contains aux.color and aux.actualScale&lt;br&gt;
 &lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
-&lt;br&gt;&lt;b&gt;Examples using this formula&lt;/b&gt;&lt;br&gt;Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/aboxMod11_001.fract&lt;br&gt;Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/aboxMod11_002.fract&lt;br&gt;Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/aboxMod11_003.fract&lt;br&gt;Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/aboxMod11_addCpixelRotate.fract&lt;br&gt;Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/aboxMod11_for8cA.fract&lt;br&gt;...&lt;h3&gt;Code&lt;/h3&gt;</string>
+&lt;br&gt;&lt;b&gt;Examples using this formula&lt;/b&gt;&lt;br&gt;Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/abox11_aboxSurfBox.fract&lt;br&gt;Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/aboxMod11_001.fract&lt;br&gt;Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/aboxMod11_002.fract&lt;br&gt;Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/aboxMod11_003.fract&lt;br&gt;Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/aboxMod11_addCpixelRotate.fract&lt;br&gt;...&lt;h3&gt;Code&lt;/h3&gt;</string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>
@@ -2578,6 +2578,16 @@ offset:</string>
    <class>MySpinBox</class>
    <extends>QSpinBox</extends>
    <header>my_spin_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>my_check_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyComboBox</class>
+   <extends>QComboBox</extends>
+   <header>my_combo_box.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

@@ -1,0 +1,1592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mandelbulb_abs_power2</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>934</width>
+    <height>2979</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">mandelbulb_abs_power2</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>2</number>
+   </property>
+   <property name="leftMargin">
+    <number>2</number>
+   </property>
+   <property name="topMargin">
+    <number>2</number>
+   </property>
+   <property name="rightMargin">
+    <number>2</number>
+   </property>
+   <property name="bottomMargin">
+    <number>2</number>
+   </property>
+   <item>
+    <widget class="MyGroupBox" name="groupCheck_transf_rotation_enabled">
+     <property name="title">
+      <string>Pre-Ro&amp;tation</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_9" stretch="0,0">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_62">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_247">
+          <property name="text">
+           <string>Stop at iteration:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="MySpinBox" name="spinboxInt_transf_stop_iterations_R">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="MySpinBox" name="spinboxInt_transf_start_iterations_R">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_246">
+          <property name="text">
+           <string>Start at iteration:</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_10" columnstretch="0,1">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_45">
+          <property name="text">
+           <string notr="true">gamma</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_44">
+          <property name="text">
+           <string notr="true">beta</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_46">
+          <property name="text">
+           <string notr="true">alpha</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="MyDoubleSpinBox" name="spinboxd3_transf_rotation_x">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-36000.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>36000.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>1.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="MyDoubleSpinBox" name="spinboxd3_transf_rotation_y">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-36000.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>36000.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>1.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="MyDoubleSpinBox" name="spinboxd3_transf_rotation_z">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-36000.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>36000.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>1.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="MyGroupBox" name="groupCheck_transf_function_enabledD_false">
+     <property name="title">
+      <string>Pre-Off&amp;set</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_11" stretch="0,0">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_65">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_250">
+          <property name="text">
+           <string>Stop at iteration:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="MySpinBox" name="spinboxInt_transf_stop_iterations_D">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="MySpinBox" name="spinboxInt_transf_start_iterations_D">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_251">
+          <property name="text">
+           <string>Start at iteration:</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_64" columnstretch="0,0,0,1">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item row="0" column="2">
+         <widget class="QLabel" name="label_119">
+          <property name="text">
+           <string notr="true">x</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="MyDoubleSpinBox" name="spinbox3_transf_offsetA_000_y">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-99.989999999999995</double>
+          </property>
+          <property name="maximum">
+           <double>99.989999999999995</double>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="label_256">
+          <property name="text">
+           <string>Offset:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLabel" name="label_120">
+          <property name="text">
+           <string notr="true">z</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_114">
+          <property name="text">
+           <string notr="true">y</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="MyDoubleSpinBox" name="spinbox3_transf_offsetA_000_x">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-99.989999999999995</double>
+          </property>
+          <property name="maximum">
+           <double>99.989999999999995</double>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="MyDoubleSpinBox" name="spinbox3_transf_offsetA_000_z">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-99.989999999999995</double>
+          </property>
+          <property name="maximum">
+           <double>99.989999999999995</double>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="title">
+      <string>Mandelbulb power 2</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_10">
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="1" column="2">
+         <widget class="MyCheckBox" name="checkBox_buffalo_abs_z">
+          <property name="text">
+           <string notr="true">PostAbs(z)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="MyCheckBox" name="checkBox_buffalo_preabs_z">
+          <property name="text">
+           <string>PreAbs(z)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="MyCheckBox" name="checkBox_buffalo_preabs_y">
+          <property name="text">
+           <string>PreAbs(y)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="MyCheckBox" name="checkBox_buffalo_abs_y">
+          <property name="text">
+           <string notr="true">PostAbs(y)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="MyCheckBox" name="checkBox_buffalo_preabs_x">
+          <property name="text">
+           <string>PreAbs(x)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="MyCheckBox" name="checkBox_buffalo_abs_x">
+          <property name="text">
+           <string notr="true">PostAbs(x)</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="MyCheckBox" name="checkBox_buffalo_pos_z">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Positive Z component</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="MyGroupBox" name="groupCheck_transf_function_enabledM">
+     <property name="title">
+      <string>Off&amp;set</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_14" stretch="0,0">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_69">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_259">
+          <property name="text">
+           <string>Stop at iteration:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="MySpinBox" name="spinboxInt_transf_stop_iterations_M">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="MySpinBox" name="spinboxInt_transf_start_iterations_M">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_260">
+          <property name="text">
+           <string>Start at iteration:</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_70" columnstretch="0,0,0,1">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item row="0" column="2">
+         <widget class="QLabel" name="label_121">
+          <property name="text">
+           <string notr="true">x</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="label_261">
+          <property name="text">
+           <string>Offset:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLabel" name="label_122">
+          <property name="text">
+           <string notr="true">z</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_115">
+          <property name="text">
+           <string notr="true">y</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="MyDoubleSpinBox" name="spinbox3_transf_offset_000_x">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-99.989999999999995</double>
+          </property>
+          <property name="maximum">
+           <double>99.989999999999995</double>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="MyDoubleSpinBox" name="spinbox3_transf_offset_000_y">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-99.989999999999995</double>
+          </property>
+          <property name="maximum">
+           <double>99.989999999999995</double>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="MyDoubleSpinBox" name="spinbox3_transf_offset_000_z">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-99.989999999999995</double>
+          </property>
+          <property name="maximum">
+           <double>99.989999999999995</double>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="MyGroupBox" name="groupCheck_transf_function_enabled">
+     <property name="title">
+      <string>Ro&amp;tation</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_15" stretch="0,0">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_63">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_252">
+          <property name="text">
+           <string>Stop at iteration:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="MySpinBox" name="spinboxInt_transf_stop_iterations_S">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="MySpinBox" name="spinboxInt_transf_start_iterations_S">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_253">
+          <property name="text">
+           <string>Start at iteration:</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_12" columnstretch="0,1">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_51">
+          <property name="text">
+           <string notr="true">gamma</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_53">
+          <property name="text">
+           <string notr="true">beta</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_54">
+          <property name="text">
+           <string notr="true">alpha</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="MyDoubleSpinBox" name="spinboxd3_mandelbox_rotation_main_x">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-180.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>180.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>1.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="MyDoubleSpinBox" name="spinboxd3_mandelbox_rotation_main_y">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-180.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>180.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>1.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="MyDoubleSpinBox" name="spinboxd3_mandelbox_rotation_main_z">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-180.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>180.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>1.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="MyGroupBox" name="groupCheck_transf_addCpixel_enabled_false">
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cpixel is CVector3 c = ( c.x, c.y, c.z). It is each original point (pixel) in 3D space where the iteration starts from, ( c = original z for each point .) It is commonly found in formula structures z = f(z) + c.&lt;/p&gt;&lt;p&gt;The Cpixel multiplier effectively scales this point &amp;quot;c&amp;quot;.&lt;/p&gt;&lt;p&gt;This transform allows the swapping of the order of the &amp;quot;CVector3 c&amp;quot; components before being multiplied by &amp;quot;CVector3 z&amp;quot; components.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="title">
+      <string>addCpixel Axis Swap ConstantM&amp;ultiplier</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_50">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_81">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item row="3" column="3">
+         <widget class="MySpinBox" name="spinboxInt_transf_stop_iterations_E">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QLabel" name="label_52">
+          <property name="text">
+           <string>Stop at iteration:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="MySpinBox" name="spinboxInt_transf_start_iterations_E">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+          <property name="value">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_72">
+          <property name="text">
+           <string>Start at iteration:</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_24" columnstretch="0,0,0,1">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item row="0" column="0" colspan="2">
+         <widget class="MyCheckBox" name="checkBox_transf_alternate_enabled_false">
+          <property name="text">
+           <string>alternate swap</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3">
+         <widget class="MyDoubleSpinBox" name="spinbox3_transf_constant_multiplier_111_y">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-99.989999999999995</double>
+          </property>
+          <property name="maximum">
+           <double>99.989999999999995</double>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="MyDoubleSpinBox" name="spinbox3_transf_constant_multiplier_111_x">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-99.989999999999995</double>
+          </property>
+          <property name="maximum">
+           <double>99.989999999999995</double>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="3">
+         <widget class="MyDoubleSpinBox" name="spinbox3_transf_constant_multiplier_111_z">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-99.989999999999995</double>
+          </property>
+          <property name="maximum">
+           <double>99.989999999999995</double>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" rowspan="3">
+         <widget class="QLabel" name="label_108">
+          <property name="text">
+           <string>Cpixel Multiplier:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="MyComboBox" name="comboBox_mandelbulbMulti_order_of_xyz">
+          <item>
+           <property name="text">
+            <string notr="true">xyz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string notr="true">xzy</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string notr="true">yxz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string notr="true">yzx</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string notr="true">zxy</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string notr="true">zyx</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>function order of c.x, c.y and c.z:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="label_49">
+          <property name="font">
+           <font>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string notr="true">c.x</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="label_50">
+          <property name="font">
+           <font>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string notr="true">c.y</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLabel" name="label_55">
+          <property name="font">
+           <font>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string notr="true">c.z</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="MyGroupBox" name="groupCheck_transf_function_enabledP_false">
+     <property name="title">
+      <string>Final Abs fun&amp;ctions</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_12" stretch="0,0">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_67">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_254">
+          <property name="text">
+           <string>Stop at iteration:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="MySpinBox" name="spinboxInt_transf_stop_iterations_H">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="MySpinBox" name="spinboxInt_transf_start_iterations_H">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_258">
+          <property name="text">
+           <string>Start at iteration:</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_68" columnstretch="0,0,0,0">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item row="0" column="1">
+         <widget class="MyCheckBox" name="checkBox_transf_function_enabledCx_false">
+          <property name="text">
+           <string notr="true">abs(z.x)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="MyCheckBox" name="checkBox_transf_function_enabledCy_false">
+          <property name="text">
+           <string notr="true">abs(z.y)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="MyCheckBox" name="checkBox_transf_function_enabledCz_false">
+          <property name="text">
+           <string notr="true">abs(z.z)</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="MyGroupBox" name="groupCheck_analyticDE_enabled_false">
+     <property name="title">
+      <string>Analytic D&amp;E extra controls</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_13" stretch="0">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_27" columnstretch="0,0,1">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item row="1" column="2">
+         <widget class="MyDoubleSpinBox" name="spinbox_analyticDE_offset_0">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>2</number>
+          </property>
+          <property name="minimum">
+           <double>-99.989999999999995</double>
+          </property>
+          <property name="maximum">
+           <double>99.989999999999995</double>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="label_177">
+          <property name="text">
+           <string>offset0:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="label_182">
+          <property name="text">
+           <string>scale1:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="MyDoubleSpinBox" name="spinbox_analyticDE_scale_1">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>2</number>
+          </property>
+          <property name="minimum">
+           <double>0.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>99.989999999999995</double>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="MyGroupBox" name="groupCheck_info">
+     <property name="title">
+      <string>I&amp;nformation</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_information_general">
+        <property name="text">
+         <string notr="true">&lt;p&gt;MandelbulbAbsPower2Iteration&lt;/p&gt;&lt;table&gt;
+&lt;tr&gt;&lt;th&gt;Reference&lt;/th&gt;&lt;td&gt;&lt;a href=&quot;/http://www.fractalforums.com/gallery-b177/buffalo-fractals&quot;&gt;/http://www.fractalforums.com/gallery-b177/buffalo-fractals&lt;br&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;b&gt;Examples using this formula&lt;/b&gt;&lt;br&gt;Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/MbulbAbsPow2_001.fract&lt;br&gt;Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/MbulbAbsPow2_002.fract&lt;h3&gt;Code&lt;/h3&gt;</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+        <property name="openExternalLinks">
+         <bool>true</bool>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_code_content">
+        <property name="styleSheet">
+         <string notr="true">border-style: outset; border-width: 2px; border-radius: 3px; border-color: black; background-color: #fff5ee; padding: 4px;</string>
+        </property>
+        <property name="text">
+         <string notr="true">&lt;body style=&quot;background-color:#fff5ee&quot;&gt;
+&lt;pre style=&quot;color:#000000; background-color:#fff5ee;  font-family:'Courier New',monospace;&quot;&gt;&lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;void&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;MandelbulbAbsPower2Iteration&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;CVector4 &lt;span style=&quot;color:#676767&quot;&gt;&amp;amp;&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;const&lt;/span&gt; sFractal &lt;span style=&quot;color:#676767&quot;&gt;*&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; sExtendedAux &lt;span style=&quot;color:#676767&quot;&gt;&amp;amp;&lt;/span&gt;aux&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
+  CVector4 c &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;const_c&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+
+  &lt;span style=&quot;color:#2929cc&quot;&gt;// pre rotation&lt;/span&gt;
+  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;rotationEnabled &lt;span style=&quot;color:#676767&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;i &lt;span style=&quot;color:#676767&quot;&gt;&amp;gt;=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;startIterationsR
+      &lt;span style=&quot;color:#676767&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;i &lt;span style=&quot;color:#676767&quot;&gt;&amp;lt;&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;stopIterationsR&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
+  &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
+    z &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;rotationMatrix&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#00008f&quot;&gt;RotateVector&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
+  &lt;span style=&quot;color:#676767&quot;&gt;}&lt;/span&gt;
+  &lt;span style=&quot;color:#2929cc&quot;&gt;// pre-offset&lt;/span&gt;
+  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;functionEnabledDFalse
+      &lt;span style=&quot;color:#676767&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;i &lt;span style=&quot;color:#676767&quot;&gt;&amp;gt;=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;startIterationsD
+      &lt;span style=&quot;color:#676767&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;i &lt;span style=&quot;color:#676767&quot;&gt;&amp;lt;&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;stopIterationsD&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
+  &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
+    z &lt;span style=&quot;color:#676767&quot;&gt;+=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;offsetA000&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color:#676767&quot;&gt;}&lt;/span&gt;
+
+  aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;DE &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;DE &lt;span style=&quot;color:#676767&quot;&gt;*&lt;/span&gt; &lt;span style=&quot;color:#ff1493&quot;&gt;2.0&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;*&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;r&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+
+  &lt;span style=&quot;color:#2929cc&quot;&gt;// pre abs. abs(z.x) and abs(z.y) effect newy. abs(z.z) effects newz&lt;/span&gt;
+  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;buffalo&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;preabsx&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;fabs&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
+  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;buffalo&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;preabsy&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;fabs&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
+  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;buffalo&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;preabsz&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;fabs&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
+
+  CVector4 zz &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; z &lt;span style=&quot;color:#676767&quot;&gt;*&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+  CVector4 newZ &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;double&lt;/span&gt; temp &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#ff1493&quot;&gt;1.0&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;-&lt;/span&gt; zz&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z &lt;span style=&quot;color:#676767&quot;&gt;/ (&lt;/span&gt;zz&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x &lt;span style=&quot;color:#676767&quot;&gt;+&lt;/span&gt; zz&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
+  newZ&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x &lt;span style=&quot;color:#676767&quot;&gt;= (&lt;/span&gt;zz&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x &lt;span style=&quot;color:#676767&quot;&gt;-&lt;/span&gt; zz&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;) *&lt;/span&gt; temp&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+  newZ&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#ff1493&quot;&gt;2.0&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;*&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x &lt;span style=&quot;color:#676767&quot;&gt;*&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y &lt;span style=&quot;color:#676767&quot;&gt;*&lt;/span&gt; temp&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+  newZ&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z &lt;span style=&quot;color:#676767&quot;&gt;= (&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;buffalo&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;posz &lt;span style=&quot;color:#676767&quot;&gt;?&lt;/span&gt; &lt;span style=&quot;color:#ff1493&quot;&gt;2.0&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;: -&lt;/span&gt;&lt;span style=&quot;color:#ff1493&quot;&gt;2.0&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;) *&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z &lt;span style=&quot;color:#676767&quot;&gt;*&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;sqrt&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;zz&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x &lt;span style=&quot;color:#676767&quot;&gt;+&lt;/span&gt; zz&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
+  z &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; newZ&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+
+  z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;buffalo&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;absx &lt;span style=&quot;color:#676767&quot;&gt;?&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;fabs&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;) :&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+  z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;buffalo&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;absy &lt;span style=&quot;color:#676767&quot;&gt;?&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;fabs&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;) :&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+  z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;buffalo&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;absz &lt;span style=&quot;color:#676767&quot;&gt;?&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;fabs&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;) :&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+
+  &lt;span style=&quot;color:#2929cc&quot;&gt;// offset&lt;/span&gt;
+  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;functionEnabledM
+      &lt;span style=&quot;color:#676767&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;i &lt;span style=&quot;color:#676767&quot;&gt;&amp;gt;=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;startIterationsM
+      &lt;span style=&quot;color:#676767&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;i &lt;span style=&quot;color:#676767&quot;&gt;&amp;lt;&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;stopIterationsM&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
+  &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
+    z &lt;span style=&quot;color:#676767&quot;&gt;+=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;offset000&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color:#676767&quot;&gt;}&lt;/span&gt;
+  &lt;span style=&quot;color:#2929cc&quot;&gt;// rotation&lt;/span&gt;
+  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;functionEnabled &lt;span style=&quot;color:#676767&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;i &lt;span style=&quot;color:#676767&quot;&gt;&amp;gt;=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;startIterationsS
+      &lt;span style=&quot;color:#676767&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;i &lt;span style=&quot;color:#676767&quot;&gt;&amp;lt;&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;stopIterationsS&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
+  &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
+    z &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;mandelbox&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;mainRot&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#00008f&quot;&gt;RotateVector&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
+  &lt;span style=&quot;color:#676767&quot;&gt;}&lt;/span&gt;
+
+  &lt;span style=&quot;color:#2929cc&quot;&gt;// addCpixel&lt;/span&gt;
+  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;addCpixelEnabledFalse
+      &lt;span style=&quot;color:#676767&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;i &lt;span style=&quot;color:#676767&quot;&gt;&amp;gt;=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;startIterationsE
+      &lt;span style=&quot;color:#676767&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;i &lt;span style=&quot;color:#676767&quot;&gt;&amp;lt;&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;stopIterationsE&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
+  &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
+    CVector4 tempC &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+    &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;alternateEnabledFalse&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt; &lt;span style=&quot;color:#2929cc&quot;&gt;// alternate&lt;/span&gt;
+    &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
+      tempC &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;c&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+      &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;switch&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;mandelbulbMulti&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;orderOfXYZ&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
+      &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
+        &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;case&lt;/span&gt; multi_OrderOfXYZ_xyz&lt;span style=&quot;color:#676767&quot;&gt;:&lt;/span&gt;
+        &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;default&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;:&lt;/span&gt; tempC &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;CVector4&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;w&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt; &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;break&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+        &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;case&lt;/span&gt; multi_OrderOfXYZ_xzy&lt;span style=&quot;color:#676767&quot;&gt;:&lt;/span&gt; tempC &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;CVector4&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;w&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt; &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;break&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+        &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;case&lt;/span&gt; multi_OrderOfXYZ_yxz&lt;span style=&quot;color:#676767&quot;&gt;:&lt;/span&gt; tempC &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;CVector4&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;w&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt; &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;break&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+        &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;case&lt;/span&gt; multi_OrderOfXYZ_yzx&lt;span style=&quot;color:#676767&quot;&gt;:&lt;/span&gt; tempC &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;CVector4&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;w&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt; &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;break&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+        &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;case&lt;/span&gt; multi_OrderOfXYZ_zxy&lt;span style=&quot;color:#676767&quot;&gt;:&lt;/span&gt; tempC &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;CVector4&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;w&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt; &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;break&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+        &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;case&lt;/span&gt; multi_OrderOfXYZ_zyx&lt;span style=&quot;color:#676767&quot;&gt;:&lt;/span&gt; tempC &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;CVector4&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;w&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt; &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;break&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+      &lt;span style=&quot;color:#676767&quot;&gt;}&lt;/span&gt;
+      aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;c &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; tempC&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+    &lt;span style=&quot;color:#676767&quot;&gt;}&lt;/span&gt;
+    &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;else&lt;/span&gt;
+    &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
+      &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;switch&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;mandelbulbMulti&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;orderOfXYZ&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
+      &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
+        &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;case&lt;/span&gt; multi_OrderOfXYZ_xyz&lt;span style=&quot;color:#676767&quot;&gt;:&lt;/span&gt;
+        &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;default&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;:&lt;/span&gt; tempC &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;CVector4&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;w&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt; &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;break&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+        &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;case&lt;/span&gt; multi_OrderOfXYZ_xzy&lt;span style=&quot;color:#676767&quot;&gt;:&lt;/span&gt; tempC &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;CVector4&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;w&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt; &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;break&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+        &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;case&lt;/span&gt; multi_OrderOfXYZ_yxz&lt;span style=&quot;color:#676767&quot;&gt;:&lt;/span&gt; tempC &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;CVector4&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;w&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt; &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;break&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+        &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;case&lt;/span&gt; multi_OrderOfXYZ_yzx&lt;span style=&quot;color:#676767&quot;&gt;:&lt;/span&gt; tempC &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;CVector4&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;w&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt; &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;break&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+        &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;case&lt;/span&gt; multi_OrderOfXYZ_zxy&lt;span style=&quot;color:#676767&quot;&gt;:&lt;/span&gt; tempC &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;CVector4&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;w&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt; &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;break&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+        &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;case&lt;/span&gt; multi_OrderOfXYZ_zyx&lt;span style=&quot;color:#676767&quot;&gt;:&lt;/span&gt; tempC &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;CVector4&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; c&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;w&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt; &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;break&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+      &lt;span style=&quot;color:#676767&quot;&gt;}&lt;/span&gt;
+    &lt;span style=&quot;color:#676767&quot;&gt;}&lt;/span&gt;
+    z &lt;span style=&quot;color:#676767&quot;&gt;+=&lt;/span&gt; tempC &lt;span style=&quot;color:#676767&quot;&gt;*&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;constantMultiplier111&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+  &lt;span style=&quot;color:#676767&quot;&gt;}&lt;/span&gt;
+
+  &lt;span style=&quot;color:#2929cc&quot;&gt;// final abs&lt;/span&gt;
+  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;functionEnabledPFalse
+      &lt;span style=&quot;color:#676767&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;i &lt;span style=&quot;color:#676767&quot;&gt;&amp;gt;=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;startIterationsH
+      &lt;span style=&quot;color:#676767&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;i &lt;span style=&quot;color:#676767&quot;&gt;&amp;lt;&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;stopIterationsH&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
+  &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
+    &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;functionEnabledCxFalse&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;fabs&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
+    &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;functionEnabledCyFalse&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;fabs&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;y&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
+    &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;functionEnabledCzFalse&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;fabs&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
+  &lt;span style=&quot;color:#676767&quot;&gt;}&lt;/span&gt;
+
+  &lt;span style=&quot;color:#2929cc&quot;&gt;// Analytic DE tweak&lt;/span&gt;
+  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;analyticDE&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;enabledFalse&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
+    aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;DE &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;DE &lt;span style=&quot;color:#676767&quot;&gt;*&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;analyticDE&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;scale1 &lt;span style=&quot;color:#676767&quot;&gt;+&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;analyticDE&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;offset0&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+&lt;span style=&quot;color:#676767&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/body&gt;</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+        <property name="openExternalLinks">
+         <bool>true</bool>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyDoubleSpinBox</class>
+   <extends>QDoubleSpinBox</extends>
+   <header>my_double_spin_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyGroupBox</class>
+   <extends>QGroupBox</extends>
+   <header>my_group_box.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MySpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>my_spin_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>my_check_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyComboBox</class>
+   <extends>QComboBox</extends>
+   <header>my_combo_box.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>checkBox_buffalo_preabs_x</tabstop>
+  <tabstop>checkBox_buffalo_preabs_y</tabstop>
+  <tabstop>checkBox_buffalo_preabs_z</tabstop>
+  <tabstop>checkBox_buffalo_abs_x</tabstop>
+  <tabstop>checkBox_buffalo_abs_y</tabstop>
+  <tabstop>checkBox_buffalo_abs_z</tabstop>
+  <tabstop>groupCheck_info</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

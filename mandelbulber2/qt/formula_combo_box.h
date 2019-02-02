@@ -1,7 +1,7 @@
 /**
  * Mandelbulber v2, a 3D fractal generator       ,=#MKNmMMKmmßMNWy,
  *                                             ,B" ]L,,p%%%,,,§;, "K
- * Copyright (C) 2017 Mandelbulber Team        §R-==%w["'~5]m%=L.=~5N
+ * Copyright (C) 2017-18 Mandelbulber Team     §R-==%w["'~5]m%=L.=~5N
  *                                        ,=mm=§M ]=4 yJKA"/-Nsaj  "Bw,==,,
  * This file is part of Mandelbulber.    §R.r= jw",M  Km .mM  FW ",§=ß., ,TN
  *                                     ,4R =%["w[N=7]J '"5=],""]]M,w,-; T=]M
@@ -44,9 +44,11 @@
 #include <QCompleter>
 #include <QSortFilterProxyModel>
 
+#include "common_my_widget_wrapper.h"
+
 #include "src/fractal_list.hpp"
 
-class cFormulaComboBox : public QComboBox
+class cFormulaComboBox : public QComboBox, public CommonMyWidgetWrapper
 {
 	Q_OBJECT
 
@@ -58,14 +60,24 @@ public:
 	void populateItemsFromFractalList(
 		QList<sFractalDescription> fractalList, QList<QPair<int, QString> /* */> insertHeader);
 
+	void resetToDefault() override;
+	QString getDefaultAsString() override;
+	QString getFullParameterName() override;
+
+protected:
+	void paintEvent(QPaintEvent *event) override;
+	void contextMenuEvent(QContextMenuEvent *event) override;
+
 private slots:
 	void onCompleterActivated(QString text);
 
 private:
 	QIcon GetIconFromCache(const QString &filename);
+	int GetDefault();
 
 	QSortFilterProxyModel *pFilterModel;
 	QCompleter *completer;
+	int defaultValue;
 
 	static QMap<QString, QIcon> iconCache;
 };

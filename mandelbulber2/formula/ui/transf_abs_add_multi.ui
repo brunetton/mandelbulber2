@@ -81,7 +81,7 @@ z = abs( z + const.A ) - abs( z - const.B ) - ( z * const.C )</string>
       </widget>
      </item>
      <item row="2" column="0">
-      <widget class="QCheckBox" name="checkBox_transf_function_enabledAz">
+      <widget class="MyCheckBox" name="checkBox_transf_function_enabledAz">
        <property name="layoutDirection">
         <enum>Qt::RightToLeft</enum>
        </property>
@@ -91,7 +91,7 @@ z = abs( z + const.A ) - abs( z - const.B ) - ( z * const.C )</string>
       </widget>
      </item>
      <item row="4" column="0">
-      <widget class="QCheckBox" name="checkBox_transf_function_enabledx">
+      <widget class="MyCheckBox" name="checkBox_transf_function_enabledx">
        <property name="layoutDirection">
         <enum>Qt::RightToLeft</enum>
        </property>
@@ -133,7 +133,7 @@ z = abs( z + const.A ) - abs( z - const.B ) - ( z * const.C )</string>
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QCheckBox" name="checkBox_transf_function_enabledAy">
+      <widget class="MyCheckBox" name="checkBox_transf_function_enabledAy">
        <property name="layoutDirection">
         <enum>Qt::RightToLeft</enum>
        </property>
@@ -214,7 +214,7 @@ z = abs( z + const.A ) - abs( z - const.B ) - ( z * const.C )</string>
       </widget>
      </item>
      <item row="5" column="0">
-      <widget class="QCheckBox" name="checkBox_transf_function_enabledy">
+      <widget class="MyCheckBox" name="checkBox_transf_function_enabledy">
        <property name="layoutDirection">
         <enum>Qt::RightToLeft</enum>
        </property>
@@ -253,7 +253,7 @@ z = abs( z + const.A ) - abs( z - const.B ) - ( z * const.C )</string>
       </widget>
      </item>
      <item row="0" column="0">
-      <widget class="QCheckBox" name="checkBox_transf_function_enabledAx">
+      <widget class="MyCheckBox" name="checkBox_transf_function_enabledAx">
        <property name="layoutDirection">
         <enum>Qt::RightToLeft</enum>
        </property>
@@ -310,7 +310,7 @@ z = abs( z + const.A ) - abs( z - const.B ) - ( z * const.C )</string>
       </widget>
      </item>
      <item row="7" column="0">
-      <widget class="QCheckBox" name="checkBox_transf_function_enabledz">
+      <widget class="MyCheckBox" name="checkBox_transf_function_enabledz">
        <property name="layoutDirection">
         <enum>Qt::RightToLeft</enum>
        </property>
@@ -626,7 +626,8 @@ z = abs( z + const.A ) - abs( z - const.B ) - ( z * const.C )</string>
 &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
   &lt;span style=&quot;color:#00008f&quot;&gt;Q_UNUSED&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;aux&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
 
-  CVector4 tempA&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; tempB&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+  CVector4 tempA &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;CVector4&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#ff1493&quot;&gt;0.0&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color:#ff1493&quot;&gt;0.0&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color:#ff1493&quot;&gt;0.0&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color:#ff1493&quot;&gt;0.0&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
+  CVector4 tempB &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;CVector4&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#ff1493&quot;&gt;0.0&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color:#ff1493&quot;&gt;0.0&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color:#ff1493&quot;&gt;0.0&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color:#ff1493&quot;&gt;0.0&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
 
   &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;functionEnabledAx&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
     tempA&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color:#00008f&quot;&gt;fabs&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x &lt;span style=&quot;color:#676767&quot;&gt;+&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;additionConstant000&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;x&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
@@ -697,6 +698,11 @@ z = abs( z + const.A ) - abs( z - const.B ) - ( z * const.C )</string>
    <extends>QGroupBox</extends>
    <header>my_group_box.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MyCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>my_check_box.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

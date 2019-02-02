@@ -142,7 +142,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QCheckBox" name="checkBox_transf_constant_julia_mode">
+    <widget class="MyCheckBox" name="checkBox_transf_constant_julia_mode">
      <property name="text">
       <string>Enable internal addCpixel constant / Julia constant swap</string>
      </property>
@@ -1120,18 +1120,18 @@
     z &lt;span style=&quot;color:#676767&quot;&gt;+=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;juliaC&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
   &lt;span style=&quot;color:#676767&quot;&gt;}&lt;/span&gt;
 
-  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;double&lt;/span&gt; r2 &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#00008f&quot;&gt;Dot&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
+  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;double&lt;/span&gt; rr &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#00008f&quot;&gt;Dot&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;z&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
   &lt;span style=&quot;color:#2929cc&quot;&gt;// if (r2 &amp;lt; 1e-21 &amp;amp;&amp;amp; r2 &amp;gt; -1e-21)&lt;/span&gt;
   &lt;span style=&quot;color:#2929cc&quot;&gt;//  r2 = (r2 &amp;gt; 0) ? 1e-21 : -1e-21;&lt;/span&gt;
-  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;r2 &lt;span style=&quot;color:#676767&quot;&gt;&amp;lt;&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;mandelbox&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;mR2&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
+  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;rr &lt;span style=&quot;color:#676767&quot;&gt;&amp;lt;&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;mandelbox&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;mR2&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
   &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
     z &lt;span style=&quot;color:#676767&quot;&gt;*=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;mandelbox&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;mboxFactor1&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
     aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;DE &lt;span style=&quot;color:#676767&quot;&gt;*=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;mandelbox&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;mboxFactor1&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
     aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;color &lt;span style=&quot;color:#676767&quot;&gt;+=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;mandelbox&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;color&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;factorSp1&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
   &lt;span style=&quot;color:#676767&quot;&gt;}&lt;/span&gt;
-  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;else if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;r2 &lt;span style=&quot;color:#676767&quot;&gt;&amp;lt;&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;mandelbox&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;fR2&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
+  &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;else if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;rr &lt;span style=&quot;color:#676767&quot;&gt;&amp;lt;&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;mandelbox&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;fR2&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
   &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
-    &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;double&lt;/span&gt; tglad_factor2 &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;mandelbox&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;fR2 &lt;span style=&quot;color:#676767&quot;&gt;/&lt;/span&gt; r2&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
+    &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;double&lt;/span&gt; tglad_factor2 &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;mandelbox&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;fR2 &lt;span style=&quot;color:#676767&quot;&gt;/&lt;/span&gt; rr&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
     z &lt;span style=&quot;color:#676767&quot;&gt;*=&lt;/span&gt; tglad_factor2&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
     aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;DE &lt;span style=&quot;color:#676767&quot;&gt;*=&lt;/span&gt; tglad_factor2&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
     aux&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;color &lt;span style=&quot;color:#676767&quot;&gt;+=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;mandelbox&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;color&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;factorSp2&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
@@ -1203,6 +1203,11 @@
    <class>MySpinBox</class>
    <extends>QSpinBox</extends>
    <header>my_spin_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>my_check_box.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

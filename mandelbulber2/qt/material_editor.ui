@@ -30,6 +30,31 @@
     <number>2</number>
    </property>
    <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="cButtonLoadSettingsFromWidget" name="pushButton_local_load_2">
+       <property name="text">
+        <string>Load</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="cButtonSaveSettingsFromWidget" name="pushButton_local_save_2">
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="cButtonResetSettingsFromWidget" name="pushButton_local_reset_2">
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,1">
      <property name="topMargin">
       <number>5</number>
@@ -82,8 +107,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>583</width>
-        <height>3992</height>
+        <width>577</width>
+        <height>3470</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -491,7 +516,7 @@ sphere radius:</string>
              </widget>
             </item>
             <item row="11" column="1" colspan="2">
-             <widget class="QComboBox" name="comboBox_fractal_coloring_algorithm">
+             <widget class="MyComboBox" name="comboBox_fractal_coloring_algorithm">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -844,7 +869,7 @@ direction vector:</string>
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;At Default Color_Speed the distance between two colors is 256. With these functions this distance = 1.0, e.g. a radius of 1.0 is one color step from the color at the origin. Similarly an addition of 1.0 = 256, cos period 1 =256.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;At the end of these functions, the colorValue is then multiplied by * 256.&lt;/p&gt;&lt;p&gt;Settings vary widely depending on such factors as fractal type &amp;amp; size, location and number of iterations.&lt;/p&gt;&lt;p&gt;Adjusting the color speed may be required.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="title">
-             <string>C&amp;olor by numbers BETA</string>
+             <string>C&amp;olor by numbers</string>
             </property>
             <property name="checkable">
              <bool>true</bool>
@@ -1557,14 +1582,14 @@ direction vector:</string>
                       <number>2</number>
                      </property>
                      <item row="1" column="2">
-                      <widget class="QCheckBox" name="checkBox_fractal_coloring_xyz_x_sqrd_enabled_false">
+                      <widget class="MyCheckBox" name="checkBox_fractal_coloring_xyz_x_sqrd_enabled_false">
                        <property name="text">
                         <string notr="true"/>
                        </property>
                       </widget>
                      </item>
                      <item row="3" column="2">
-                      <widget class="QCheckBox" name="checkBox_fractal_coloring_xyz_z_sqrd_enabled_false">
+                      <widget class="MyCheckBox" name="checkBox_fractal_coloring_xyz_z_sqrd_enabled_false">
                        <property name="text">
                         <string notr="true"/>
                        </property>
@@ -1640,7 +1665,7 @@ direction vector:</string>
                       </widget>
                      </item>
                      <item row="2" column="2">
-                      <widget class="QCheckBox" name="checkBox_fractal_coloring_xyz_y_sqrd_enabled_false">
+                      <widget class="MyCheckBox" name="checkBox_fractal_coloring_xyz_y_sqrd_enabled_false">
                        <property name="text">
                         <string notr="true"/>
                        </property>
@@ -1781,7 +1806,7 @@ direction vector:</string>
                       <number>2</number>
                      </property>
                      <item row="1" column="0">
-                      <widget class="QCheckBox" name="checkBox_fractal_coloring_iter_add_scale_enabled_true">
+                      <widget class="MyCheckBox" name="checkBox_fractal_coloring_iter_add_scale_enabled_true">
                        <property name="text">
                         <string notr="true">addition value:</string>
                        </property>
@@ -1819,7 +1844,7 @@ direction vector:</string>
                       </widget>
                      </item>
                      <item row="2" column="0">
-                      <widget class="QCheckBox" name="checkBox_fractal_coloring_iter_scale_enabled_false">
+                      <widget class="MyCheckBox" name="checkBox_fractal_coloring_iter_scale_enabled_false">
                        <property name="text">
                         <string notr="true"> scale (needs an input value):</string>
                        </property>
@@ -1908,7 +1933,7 @@ direction vector:</string>
                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;These options deform the Final ColorValues derived from the previous functions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="title">
-                   <string>Palette defo&amp;rming options</string>
+                   <string>Palette deformin&amp;g options</string>
                   </property>
                   <property name="checkable">
                    <bool>true</bool>
@@ -3898,7 +3923,7 @@ object size)</string>
              </widget>
             </item>
             <item row="0" column="1" colspan="3">
-             <widget class="QComboBox" name="comboBox_texture_mapping_type">
+             <widget class="MyComboBox" name="comboBox_texture_mapping_type">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -4274,6 +4299,21 @@ object size)</string>
    <header>file_select_widget.h</header>
   </customwidget>
   <customwidget>
+   <class>cButtonLoadSettingsFromWidget</class>
+   <extends>QPushButton</extends>
+   <header>buton_load_settings_from_widget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>cButtonSaveSettingsFromWidget</class>
+   <extends>QPushButton</extends>
+   <header>buton_save_settings_from_widget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>cButtonResetSettingsFromWidget</class>
+   <extends>QPushButton</extends>
+   <header>buton_reset_settings_from_widget.h</header>
+  </customwidget>
+  <customwidget>
    <class>ColorPaletteWidget</class>
    <extends>QWidget</extends>
    <header>color_palette_widget.h</header>
@@ -4284,6 +4324,11 @@ object size)</string>
    <extends>QWidget</extends>
    <header>material_widget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MyComboBox</class>
+   <extends>QComboBox</extends>
+   <header>my_combo_box.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
@@ -4327,12 +4372,12 @@ object size)</string>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>138</x>
-     <y>1717</y>
+     <x>161</x>
+     <y>1755</y>
     </hint>
     <hint type="destinationlabel">
      <x>562</x>
-     <y>1719</y>
+     <y>1757</y>
     </hint>
    </hints>
   </connection>
@@ -4343,12 +4388,28 @@ object size)</string>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>162</x>
-     <y>1745</y>
+     <x>185</x>
+     <y>1783</y>
     </hint>
     <hint type="destinationlabel">
      <x>562</x>
-     <y>1747</y>
+     <y>1785</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>groupCheck_fractal_coloring_extra_color_enabled_false</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>groupCheck_fractal_coloring_extra_color_options_false</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>69</x>
+     <y>738</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>176</x>
+     <y>597</y>
     </hint>
    </hints>
   </connection>

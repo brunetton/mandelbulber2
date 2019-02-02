@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>382</width>
-    <height>1624</height>
+    <height>1657</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,6 +26,31 @@
    <property name="bottomMargin">
     <number>2</number>
    </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="cButtonLoadSettingsFromWidget" name="pushButton_local_load_2">
+       <property name="text">
+        <string>Load</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="cButtonSaveSettingsFromWidget" name="pushButton_local_save_2">
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="cButtonResetSettingsFromWidget" name="pushButton_local_reset_2">
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
@@ -160,7 +185,7 @@ each fractal formula</string>
          </widget>
         </item>
         <item row="5" column="1" colspan="2">
-         <widget class="QComboBox" name="comboBox_delta_DE_method">
+         <widget class="MyComboBox" name="comboBox_delta_DE_method">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -253,7 +278,7 @@ function:</string>
          </widget>
         </item>
         <item row="6" column="1" colspan="2">
-         <widget class="QComboBox" name="comboBox_delta_DE_function">
+         <widget class="MyComboBox" name="comboBox_delta_DE_function">
           <property name="enabled">
            <bool>true</bool>
           </property>
@@ -345,7 +370,7 @@ function:</string>
        </layout>
       </item>
       <item>
-       <widget class="QCheckBox" name="checkBox_connect_detail_level_2">
+       <widget class="MyCheckBox" name="checkBox_connect_detail_level_2">
         <property name="toolTip">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When this option is enabled, the fractal appearance is maintained at all resolutions. &lt;/p&gt;&lt;p&gt;The fractal detail level will be automatically adjusted to match any change of image resolution. &lt;/p&gt;&lt;p&gt;For instance, if the resolution is doubled then the detail level will be reduced by half.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
@@ -598,7 +623,7 @@ with image resolution</string>
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enables rendering of fractal cross sections.&lt;/p&gt;&lt;p&gt;Example cross sections of Buffalo fractal:&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;x = {-10; 10}, y = {-10, 10}, z = {-10, 0}&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;x = {-10, 0}, y = {0, 10}, z = {-0.1; 0.1}&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;img src=&quot;:/tooltips/tooltips_images/image - limits z.jpeg&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;img src=&quot;:/tooltips/tooltips_images/image - limits x, y, z.jpeg&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="title">
-      <string>&amp;Limits (bounding box)</string>
+      <string>Limits (bounding bo&amp;x)</string>
      </property>
      <property name="checkable">
       <bool>true</bool>
@@ -1150,7 +1175,7 @@ with image resolution</string>
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QComboBox" name="comboBox_netrender_mode">
+         <widget class="MyComboBox" name="comboBox_netrender_mode">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
             <horstretch>0</horstretch>
@@ -1531,6 +1556,26 @@ border-radius: 3px; background: white; text-align: center; qproperty-alignment: 
    <class>MyLineEdit</class>
    <extends>QLineEdit</extends>
    <header>my_line_edit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>cButtonLoadSettingsFromWidget</class>
+   <extends>QPushButton</extends>
+   <header>buton_load_settings_from_widget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>cButtonSaveSettingsFromWidget</class>
+   <extends>QPushButton</extends>
+   <header>buton_save_settings_from_widget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>cButtonResetSettingsFromWidget</class>
+   <extends>QPushButton</extends>
+   <header>buton_reset_settings_from_widget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyComboBox</class>
+   <extends>QComboBox</extends>
+   <header>my_combo_box.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

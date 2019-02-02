@@ -270,8 +270,8 @@ void cOpenClHardware::ListOpenClDevices()
 					QCryptographicHash hashCrypt(QCryptographicHash::Md4);
 					hashCrypt.addData(deviceInformation.deviceName.toLocal8Bit());
 					hashCrypt.addData(deviceInformation.deviceVersion.toLocal8Bit());
-					char index = char(i);
-					hashCrypt.addData(&index);
+					QString indexString = QString::number(i);
+					hashCrypt.addData(indexString.toLocal8Bit());
 					deviceInformation.hash = hashCrypt.result().left(3);
 
 					devicesInformation.append(deviceInformation);
@@ -336,26 +336,42 @@ void cOpenClHardware::EnableDevicesByHashList(const QString &list)
 	QStringList stringList = list.split("|");
 
 	// disable all devices
+	selectedDevicesIndices.clear();
 	for (int dev = 0; dev < clDeviceWorkers.size(); dev++)
 	{
 		DisableDevice(dev);
 	}
 
-	// enable only devices from list
-	for (int i = 0; i < stringList.size(); i++)
+	if (clDeviceWorkers.size() > 0)
 	{
-		QByteArray hashFromList = QByteArray::fromHex(stringList.at(i).toLocal8Bit());
-
-		for (int dev = 0; dev < clDeviceWorkers.size(); dev++)
+		// enable only devices from list
+		for (int i = 0; i < stringList.size(); i++)
 		{
-			QByteArray hashFromDevice = clDeviceWorkers[dev].getDeviceInformation().hash;
-			if (hashFromDevice.left(3) == hashFromList.left(3))
+			QByteArray hashFromList = QByteArray::fromHex(stringList.at(i).toLocal8Bit());
+
+			for (int dev = 0; dev < clDeviceWorkers.size(); dev++)
 			{
-				EnableDevice(dev);
-				WriteLog(
-					QString("Device ") + clDeviceWorkers[dev].getDeviceInformation().deviceName + " enabled",
-					3);
+				QByteArray hashFromDevice = clDeviceWorkers[dev].getDeviceInformation().hash;
+				if (hashFromDevice.left(3) == hashFromList.left(3))
+				{
+					EnableDevice(dev);
+					WriteLog(QString("Device ") + clDeviceWorkers[dev].getDeviceInformation().deviceName
+										 + " enabled",
+						3);
+				}
 			}
+		}
+
+		if (selectedDevicesIndices.isEmpty())
+		{
+			QString errorMessage =
+				"No OpenCL devices selected or selected unknown devices!\n"
+				"Selected first available GPU device\n"
+				"Check program preferences to select correct OpenCL device"
+				"from list of available GPU devices";
+			cErrorMessage::showMessage(errorMessage, cErrorMessage::errorMessage, nullptr);
+
+			EnableDevice(0);
 		}
 	}
 }

@@ -85,6 +85,11 @@ public:
 	// these methods have to be implemented by widgets inheriting this class
 	virtual void resetToDefault() = 0;
 
+	// these methods have to be implemented by widgets inheriting this class
+	virtual QString getDefaultAsString() = 0;
+	virtual QString getFullParameterName() = 0;
+	QString getParameterContainerName();
+
 protected:
 	~CommonMyWidgetWrapper() = default;
 	cParameterContainer *parameterContainer;
@@ -97,10 +102,6 @@ protected:
 
 	// contextMenuEvent doesn't overwrite method from child class, but this function cal be called
 	void contextMenuEvent(QContextMenuEvent *event, QMenu *existingMenu = nullptr);
-
-	// these methods have to be implemented by widgets inheriting this class
-	virtual QString getDefaultAsString() = 0;
-	virtual QString getFullParameterName() = 0;
 };
 
 #endif /* MANDELBULBER2_QT_COMMON_MY_WIDGET_WRAPPER_H_ */

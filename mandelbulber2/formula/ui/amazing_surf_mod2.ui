@@ -109,7 +109,7 @@
          <number>2</number>
         </property>
         <item row="0" column="3">
-         <widget class="QComboBox" name="comboBox_mandelbulbMulti_order_of_xyz">
+         <widget class="MyComboBox" name="comboBox_mandelbulbMulti_order_of_xyz">
           <item>
            <property name="text">
             <string notr="true">xyz</string>
@@ -143,7 +143,7 @@
          </widget>
         </item>
         <item row="0" column="0" colspan="2">
-         <widget class="QCheckBox" name="checkBox_transf_alternate_enabled_false">
+         <widget class="MyCheckBox" name="checkBox_transf_alternate_enabled_false">
           <property name="text">
            <string>alternate swap</string>
           </property>
@@ -531,7 +531,7 @@
        </layout>
       </item>
       <item>
-       <widget class="QCheckBox" name="checkBox_transf_function_enabledCy_false">
+       <widget class="MyCheckBox" name="checkBox_transf_function_enabledCy_false">
         <property name="text">
          <string notr="true">varying C</string>
         </property>
@@ -646,14 +646,14 @@
      <item row="13" column="0">
       <layout class="QGridLayout" name="gridLayout_16" columnstretch="0,1">
        <item row="1" column="0">
-        <widget class="QCheckBox" name="checkBox_transf_function_enabledAx_false">
+        <widget class="MyCheckBox" name="checkBox_transf_function_enabledAx_false">
          <property name="text">
           <string>Enable fold z.z:</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QCheckBox" name="checkBox_transf_function_enabledSw_false">
+        <widget class="MyCheckBox" name="checkBox_transf_function_enabledSw_false">
          <property name="text">
           <string>Enable swap z.x z.y</string>
          </property>
@@ -985,7 +985,7 @@
         </widget>
        </item>
        <item row="1" column="3">
-        <widget class="QCheckBox" name="checkBox_transf_function_enabledAz_false">
+        <widget class="MyCheckBox" name="checkBox_transf_function_enabledAz_false">
          <property name="text">
           <string>Slot 3</string>
          </property>
@@ -1044,14 +1044,14 @@
         </widget>
        </item>
        <item row="1" column="2">
-        <widget class="QCheckBox" name="checkBox_transf_function_enabledAy_false">
+        <widget class="MyCheckBox" name="checkBox_transf_function_enabledAy_false">
          <property name="text">
           <string>Slot 2</string>
          </property>
         </widget>
        </item>
        <item row="2" column="3">
-        <widget class="QComboBox" name="comboBox_aSurf3Folds_order_of_folds_3">
+        <widget class="MyComboBox" name="comboBox_aSurf3Folds_order_of_folds_3">
          <property name="enabled">
           <bool>false</bool>
          </property>
@@ -1103,7 +1103,7 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QCheckBox" name="checkBox_transf_function_enabledAx">
+        <widget class="MyCheckBox" name="checkBox_transf_function_enabledAx">
          <property name="text">
           <string>Slot 1</string>
          </property>
@@ -1126,7 +1126,7 @@
         </widget>
        </item>
        <item row="2" column="2">
-        <widget class="QComboBox" name="comboBox_aSurf3Folds_order_of_folds_2">
+        <widget class="MyComboBox" name="comboBox_aSurf3Folds_order_of_folds_2">
          <property name="enabled">
           <bool>false</bool>
          </property>
@@ -1148,7 +1148,7 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QComboBox" name="comboBox_aSurf3Folds_order_of_folds_1">
+        <widget class="MyComboBox" name="comboBox_aSurf3Folds_order_of_folds_1">
          <property name="enabled">
           <bool>false</bool>
          </property>
@@ -1679,14 +1679,14 @@
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QCheckBox" name="checkBox_transf_function_enabledBy_false">
+            <widget class="MyCheckBox" name="checkBox_transf_function_enabledBy_false">
              <property name="text">
               <string>Enable polynomial square mode:</string>
              </property>
             </widget>
            </item>
            <item row="1" column="1">
-            <widget class="QCheckBox" name="checkBox_transf_function_enabledBx_false">
+            <widget class="MyCheckBox" name="checkBox_transf_function_enabledBx_false">
              <property name="text">
               <string>Enable polynomial cubic mode:</string>
              </property>
@@ -2243,7 +2243,7 @@ offset:</string>
                <number>2</number>
               </property>
               <item row="3" column="0" colspan="2">
-               <widget class="QCheckBox" name="checkBox_transf_function_enabledM_false">
+               <widget class="MyCheckBox" name="checkBox_transf_function_enabledM_false">
                 <property name="text">
                  <string>enable var&amp;y scale mode B</string>
                 </property>
@@ -2943,23 +2943,7 @@ offset:</string>
   &lt;span style=&quot;color:#676767&quot;&gt;}&lt;/span&gt;
 
   oldZ &lt;span style=&quot;color:#676767&quot;&gt;=&lt;/span&gt; z&lt;span style=&quot;color:#676767&quot;&gt;;&lt;/span&gt;
-  &lt;span style=&quot;color:#2929cc&quot;&gt;/*bool functionEnabledN[5] = {fractal-&amp;gt;transformCommon.functionEnabledAx,&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;    fractal-&amp;gt;transformCommon.functionEnabledAyFalse,&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;    fractal-&amp;gt;transformCommon.functionEnabledAzFalse};&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;  // fractal-&amp;gt;transformCommon.functionEnabledBxFalse,&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;  // fractal-&amp;gt;transformCommon.functionEnabledByFalse};&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;  int startIterationN[5] = {fractal-&amp;gt;transformCommon.startIterationsA,&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;    fractal-&amp;gt;transformCommon.startIterationsB, fractal-&amp;gt;transformCommon.startIterationsC,&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;    fractal-&amp;gt;transformCommon.startIterationsD, fractal-&amp;gt;transformCommon.startIterationsE};&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;  int stopIterationN[5] = {fractal-&amp;gt;transformCommon.stopIterationsA,&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;    fractal-&amp;gt;transformCommon.stopIterationsB, fractal-&amp;gt;transformCommon.stopIterationsC,&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;    fractal-&amp;gt;transformCommon.stopIterationsD, fractal-&amp;gt;transformCommon.stopIterationsE};&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;  enumMulti_orderOfFolds foldN[5] = {fractal-&amp;gt;surfFolds.orderOfFolds1,&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;    fractal-&amp;gt;surfFolds.orderOfFolds2, fractal-&amp;gt;surfFolds.orderOfFolds3,&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;    fractal-&amp;gt;surfFolds.orderOfFolds4, fractal-&amp;gt;surfFolds.orderOfFolds5};&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;  for (int f = 0; f &amp;lt; 5; f++)*/&lt;/span&gt;
+
   &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;bool&lt;/span&gt; functionEnabledN&lt;span style=&quot;color:#676767&quot;&gt;[&lt;/span&gt;&lt;span style=&quot;color:#ff1493&quot;&gt;3&lt;/span&gt;&lt;span style=&quot;color:#676767&quot;&gt;] = {&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;functionEnabledAx&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt;
     fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;functionEnabledAyFalse&lt;span style=&quot;color:#676767&quot;&gt;,&lt;/span&gt;
     fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;functionEnabledAzFalse&lt;span style=&quot;color:#676767&quot;&gt;};&lt;/span&gt;
@@ -3150,13 +3134,6 @@ offset:</string>
 
     &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;rrCol &lt;span style=&quot;color:#676767&quot;&gt;&amp;lt;&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;maxR2d1&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
     &lt;span style=&quot;color:#676767&quot;&gt;{&lt;/span&gt;
-      &lt;span style=&quot;color:#2929cc&quot;&gt;/*if (rrCol &amp;lt; fractal-&amp;gt;transformCommon.minR2p25)&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;        colorAdd += fractal-&amp;gt;mandelbox.color.factorSp1 * (fractal-&amp;gt;transformCommon.minR2p25 - rrCol)&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;                    + fractal-&amp;gt;mandelbox.color.factorSp2&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;                        * (fractal-&amp;gt;transformCommon.maxR2d1 - fractal-&amp;gt;transformCommon.minR2p25);&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;      else&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;        colorAdd += fractal-&amp;gt;mandelbox.color.factorSp2 * (fractal-&amp;gt;transformCommon.maxR2d1 -&lt;/span&gt;
-&lt;span style=&quot;color:#2929cc&quot;&gt;      rrCol);*/&lt;/span&gt;
       colorAdd &lt;span style=&quot;color:#676767&quot;&gt;+=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;mandelbox&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;color&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;factorSp2 &lt;span style=&quot;color:#676767&quot;&gt;* (&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;maxR2d1 &lt;span style=&quot;color:#676767&quot;&gt;-&lt;/span&gt; rrCol&lt;span style=&quot;color:#676767&quot;&gt;);&lt;/span&gt;
       &lt;span style=&quot;color:#2e8b57; font-weight:bold&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#676767&quot;&gt;(&lt;/span&gt;rrCol &lt;span style=&quot;color:#676767&quot;&gt;&amp;lt;&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;minR2p25&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
         colorAdd &lt;span style=&quot;color:#676767&quot;&gt;+=&lt;/span&gt; fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;mandelbox&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;color&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;factorSp1 &lt;span style=&quot;color:#676767&quot;&gt;* (&lt;/span&gt;fractal&lt;span style=&quot;color:#676767&quot;&gt;-&amp;gt;&lt;/span&gt;transformCommon&lt;span style=&quot;color:#676767&quot;&gt;.&lt;/span&gt;minR2p25 &lt;span style=&quot;color:#676767&quot;&gt;-&lt;/span&gt; rrCol&lt;span style=&quot;color:#676767&quot;&gt;)&lt;/span&gt;
@@ -3200,20 +3177,30 @@ offset:</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>MyDoubleSpinBox</class>
-   <extends>QDoubleSpinBox</extends>
-   <header>my_double_spin_box.h</header>
-  </customwidget>
-  <customwidget>
    <class>MyGroupBox</class>
    <extends>QGroupBox</extends>
    <header>my_group_box.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
+   <class>MyDoubleSpinBox</class>
+   <extends>QDoubleSpinBox</extends>
+   <header>my_double_spin_box.h</header>
+  </customwidget>
+  <customwidget>
    <class>MySpinBox</class>
    <extends>QSpinBox</extends>
    <header>my_spin_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>my_check_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyComboBox</class>
+   <extends>QComboBox</extends>
+   <header>my_combo_box.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
@@ -3248,11 +3235,11 @@ offset:</string>
    <hints>
     <hint type="sourcelabel">
      <x>470</x>
-     <y>990</y>
+     <y>962</y>
     </hint>
     <hint type="destinationlabel">
      <x>470</x>
-     <y>1021</y>
+     <y>993</y>
     </hint>
    </hints>
   </connection>
@@ -3264,11 +3251,11 @@ offset:</string>
    <hints>
     <hint type="sourcelabel">
      <x>470</x>
-     <y>990</y>
+     <y>962</y>
     </hint>
     <hint type="destinationlabel">
      <x>470</x>
-     <y>1053</y>
+     <y>1025</y>
     </hint>
    </hints>
   </connection>
@@ -3280,11 +3267,11 @@ offset:</string>
    <hints>
     <hint type="sourcelabel">
      <x>470</x>
-     <y>990</y>
+     <y>962</y>
     </hint>
     <hint type="destinationlabel">
      <x>470</x>
-     <y>1085</y>
+     <y>1057</y>
     </hint>
    </hints>
   </connection>
@@ -3296,11 +3283,11 @@ offset:</string>
    <hints>
     <hint type="sourcelabel">
      <x>706</x>
-     <y>990</y>
+     <y>962</y>
     </hint>
     <hint type="destinationlabel">
      <x>706</x>
-     <y>1021</y>
+     <y>993</y>
     </hint>
    </hints>
   </connection>
@@ -3312,11 +3299,11 @@ offset:</string>
    <hints>
     <hint type="sourcelabel">
      <x>706</x>
-     <y>990</y>
+     <y>962</y>
     </hint>
     <hint type="destinationlabel">
      <x>706</x>
-     <y>1053</y>
+     <y>1025</y>
     </hint>
    </hints>
   </connection>
@@ -3328,11 +3315,11 @@ offset:</string>
    <hints>
     <hint type="sourcelabel">
      <x>706</x>
-     <y>990</y>
+     <y>962</y>
     </hint>
     <hint type="destinationlabel">
      <x>706</x>
-     <y>1085</y>
+     <y>1057</y>
     </hint>
    </hints>
   </connection>
@@ -3344,11 +3331,11 @@ offset:</string>
    <hints>
     <hint type="sourcelabel">
      <x>942</x>
-     <y>990</y>
+     <y>962</y>
     </hint>
     <hint type="destinationlabel">
      <x>942</x>
-     <y>1021</y>
+     <y>993</y>
     </hint>
    </hints>
   </connection>
@@ -3360,11 +3347,11 @@ offset:</string>
    <hints>
     <hint type="sourcelabel">
      <x>942</x>
-     <y>990</y>
+     <y>962</y>
     </hint>
     <hint type="destinationlabel">
      <x>942</x>
-     <y>1053</y>
+     <y>1025</y>
     </hint>
    </hints>
   </connection>
@@ -3376,11 +3363,11 @@ offset:</string>
    <hints>
     <hint type="sourcelabel">
      <x>942</x>
-     <y>990</y>
+     <y>962</y>
     </hint>
     <hint type="destinationlabel">
      <x>942</x>
-     <y>1085</y>
+     <y>1057</y>
     </hint>
    </hints>
   </connection>
@@ -3391,12 +3378,12 @@ offset:</string>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>15</x>
-     <y>1109</y>
+     <x>19</x>
+     <y>1089</y>
     </hint>
     <hint type="destinationlabel">
-     <x>291</x>
-     <y>1104</y>
+     <x>456</x>
+     <y>1091</y>
     </hint>
    </hints>
   </connection>

@@ -80,6 +80,11 @@ size_t cSettings::CreateText(const cParameterContainer *par, const cFractalConta
 	for (auto &parameterNameFromList : parameterList)
 	{
 		if (parameterNameFromList == "description") continue;
+
+		if (!listOfParametersToProcess.isEmpty()) // selective saving
+		{
+			if (!listOfParametersToProcess.contains(QString("main_") + parameterNameFromList)) continue;
+		}
 		settingsText += CreateOneLine(par, parameterNameFromList);
 	}
 
@@ -93,6 +98,12 @@ size_t cSettings::CreateText(const cParameterContainer *par, const cFractalConta
 				QString fractalSettingsText = "";
 				for (const auto &parameterNameFromFractal : parameterListFractal)
 				{
+					if (!listOfParametersToProcess.isEmpty()) // selective saving
+					{
+						if (!listOfParametersToProcess.contains(
+									QString("fractal%1_").arg(f) + parameterNameFromFractal))
+							continue;
+					}
 					fractalSettingsText += CreateOneLine(&fractPar->at(f), parameterNameFromFractal);
 				}
 				if (fractalSettingsText.length() > 0)
@@ -450,27 +461,30 @@ bool cSettings::Decode(cParameterContainer *par, cFractalContainer *fractPar,
 	QString section;
 	if (textPrepared)
 	{
-		// clear settings
-		par->ResetAllToDefault();
-		if (fractPar)
+		if (listOfParametersToProcess.isEmpty()) // if not selective load
 		{
-			for (int i = 0; i < NUMBER_OF_FRACTALS; i++)
-				fractPar->at(i).ResetAllToDefault();
-		}
-		DeleteAllPrimitiveParams(par);
-		listOfLoadedPrimitives.clear();
-		DeleteAllMaterialParams(par);
+			// clear settings
+			par->ResetAllToDefault();
+			if (fractPar)
+			{
+				for (int i = 0; i < NUMBER_OF_FRACTALS; i++)
+					fractPar->at(i).ResetAllToDefault();
+			}
+			DeleteAllPrimitiveParams(par);
+			listOfLoadedPrimitives.clear();
+			DeleteAllMaterialParams(par);
 
-		if (frames)
-		{
-			frames->ClearAll();
-			frames->RemoveAllAudioParameters(par);
-		}
-		if (keyframes)
-		{
-			keyframes->ClearAll();
-			keyframes->ClearMorphCache();
-			keyframes->RemoveAllAudioParameters(par);
+			if (frames)
+			{
+				frames->ClearAll();
+				frames->RemoveAllAudioParameters(par);
+			}
+			if (keyframes)
+			{
+				keyframes->ClearAll();
+				keyframes->ClearMorphCache();
+				keyframes->RemoveAllAudioParameters(par);
+			}
 		}
 		// temporary containers to decode frames
 		cParameterContainer parTemp;
@@ -502,15 +516,32 @@ bool cSettings::Decode(cParameterContainer *par, cFractalContainer *fractPar,
 				bool result = false;
 				if (section == QString("main_parameters"))
 				{
+					if (!listOfParametersToProcess.isEmpty()) // selective loading
+					{
+						int firstSpace = line.indexOf(' ');
+						QString parameterName = line.left(firstSpace);
+						if (!listOfParametersToProcess.contains(QString("main_") + parameterName)) continue;
+					}
+
 					result = DecodeOneLine(par, line);
 				}
 				else if (section.contains("fractal"))
 				{
 					int i = section.rightRef(1).toInt() - 1;
+
+					if (!listOfParametersToProcess.isEmpty()) // selective loading
+					{
+						int firstSpace = line.indexOf(' ');
+						QString parameterName = line.left(firstSpace);
+						if (!listOfParametersToProcess.contains(QString("fractal%1_").arg(i) + parameterName))
+							continue;
+					}
+
 					if (fractPar) result = DecodeOneLine(&fractPar->at(i), line);
 				}
 				else if (section == QString("frames"))
 				{
+
 					if (frames)
 					{
 						if (csvLine == 0)

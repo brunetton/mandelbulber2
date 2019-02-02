@@ -63,7 +63,7 @@
       </widget>
      </item>
      <item row="7" column="2">
-      <widget class="QComboBox" name="comboBox_mandelbulbMulti_order_of_xyz">
+      <widget class="MyComboBox" name="comboBox_mandelbulbMulti_order_of_xyz">
        <item>
         <property name="text">
          <string notr="true">xyz</string>
@@ -194,7 +194,7 @@
       </widget>
      </item>
      <item row="8" column="2">
-      <widget class="QCheckBox" name="checkBox_transf_alternate_enabled_false">
+      <widget class="MyCheckBox" name="checkBox_transf_alternate_enabled_false">
        <property name="text">
         <string>alternate swap</string>
        </property>
@@ -512,6 +512,16 @@
    <class>MySpinBox</class>
    <extends>QSpinBox</extends>
    <header>my_spin_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>my_check_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyComboBox</class>
+   <extends>QComboBox</extends>
+   <header>my_combo_box.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

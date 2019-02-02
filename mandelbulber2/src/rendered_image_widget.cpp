@@ -77,6 +77,9 @@ RenderedImage::RenderedImage(QWidget *parent) : QWidget(parent)
 	gridType = gridTypeCrosshair;
 	placeLightBehind = false;
 	clickModesEnables = true;
+	draggingStarted = false;
+	draggingInitStarted = false;
+	buttonsPressed = 0;
 
 	QList<QVariant> mode;
 	mode.append(int(RenderedImage::clickDoNothing));
@@ -201,7 +204,7 @@ void RenderedImage::DisplayCoordinates()
 		case clickDOFFocus: text = tr("Change DOF focus"); break;
 		case clickPlaceLight:
 			text = tr("Place light #") + QString::number(clickModeData.at(1).toInt());
-			text += tr("\nMouse wheel - light fov / bkw");
+			text += tr("\nCtrl + Mouse wheel - light fov / bkw");
 			break;
 		case clickPlacePrimitive:
 			text = tr("Place ") + PrimitiveNames(fractal::enumObjectType(clickModeData.at(1).toInt()))
@@ -214,7 +217,7 @@ void RenderedImage::DisplayCoordinates()
 			text += tr("\narrow keys - sidewards");
 			text += tr("\nz, x keys - roll");
 			text += tr("\nspacebar - pause");
-			text += tr("\nhold shift key - orthogonal strafe");
+			text += tr("\nhold shift key - orthogonal move");
 			break;
 		case clickDoNothing: text = ""; break;
 		case clickPlaceRandomLightCenter:
@@ -565,6 +568,24 @@ void RenderedImage::mouseMoveEvent(QMouseEvent *event)
 	}
 
 	emit mouseMoved(screenPoint.x, screenPoint.y);
+
+	if (draggingInitStarted)
+	{
+		if (abs(screenPoint.x - dragStartPosition.x) > 1
+				|| abs(screenPoint.y - dragStartPosition.y) > 1)
+		{
+			draggingInitStarted = false;
+			draggingStarted = true;
+			emit mouseDragStart(dragStartPosition.x, dragStartPosition.y, dragButtons);
+		}
+	}
+
+	if (draggingStarted)
+	{
+		int dx = screenPoint.x - dragStartPosition.x;
+		int dy = screenPoint.y - dragStartPosition.y;
+		emit mouseDragDelta(dx, dy);
+	}
 }
 
 void RenderedImage::mousePressEvent(QMouseEvent *event)
@@ -584,14 +605,31 @@ void RenderedImage::mousePressEvent(QMouseEvent *event)
 	{
 		if (clickModesEnables)
 		{
-			emit singleClick(event->x(), event->y(), event->button());
+			draggingInitStarted = true;
+			dragStartPosition = CVector2<int>(event->x(), event->y());
+			dragButtons = event->buttons();
 		}
 	}
+	buttonsPressed++;
 }
 
 void RenderedImage::mouseReleaseEvent(QMouseEvent *event)
 {
-	(void)event;
+	if (!draggingStarted && enumClickMode(clickModeData.at(0).toInt()) != clickFlightSpeedControl)
+	{
+		if (clickModesEnables)
+		{
+			emit singleClick(event->x(), event->y(), event->button());
+		}
+	}
+
+	if (buttonsPressed == 1)
+	{
+		draggingStarted = false;
+		draggingInitStarted = false;
+		emit mouseDragFinish();
+	}
+	buttonsPressed--;
 }
 
 void RenderedImage::enterEvent(QEvent *event)

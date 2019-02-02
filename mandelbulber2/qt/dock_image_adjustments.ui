@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>302</width>
+    <width>337</width>
     <height>1257</height>
    </rect>
   </property>
@@ -26,6 +26,31 @@
    <property name="bottomMargin">
     <number>2</number>
    </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="cButtonLoadSettingsFromWidget" name="pushButton_local_load_2">
+       <property name="text">
+        <string>Load</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="cButtonSaveSettingsFromWidget" name="pushButton_local_save_2">
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="cButtonResetSettingsFromWidget" name="pushButton_local_reset_2">
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
    <item>
     <widget class="QGroupBox" name="groupBox_imageResolution">
      <property name="title">
@@ -92,7 +117,7 @@
          </layout>
         </item>
         <item row="2" column="1">
-         <widget class="QComboBox" name="comboBox_image_proportion">
+         <widget class="MyComboBox" name="comboBox_image_proportion">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -188,7 +213,7 @@
       <item>
        <widget class="MyGroupBox" name="groupCheck_antialiasing_enabled">
         <property name="title">
-         <string>Anti-a&amp;liasing</string>
+         <string>Anti-aliasin&amp;g</string>
         </property>
         <property name="checkable">
          <bool>true</bool>
@@ -246,7 +271,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="checkBox_connect_detail_level">
+       <widget class="MyCheckBox" name="checkBox_connect_detail_level">
         <property name="toolTip">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When this option is enabled, the fractal appearance is maintained at all resolutions. &lt;/p&gt;&lt;p&gt;The fractal detail level will be automatically adjusted to match any change of image resolution. &lt;/p&gt;&lt;p&gt;For instance, if the resolution is doubled then the detail level will be reduced by half.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
@@ -452,7 +477,7 @@
          </widget>
         </item>
         <item row="0" column="1" colspan="2">
-         <widget class="QComboBox" name="comboBox_stereo_mode">
+         <widget class="MyComboBox" name="comboBox_stereo_mode">
           <property name="toolTip">
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defines how stereoscopic image will be rendered.&lt;/p&gt;&lt;p&gt;Left-right - View for left eye will be rendered on the left side of the image. View for right eye will be on the right side.&lt;/p&gt;&lt;p&gt;Top-bottom - View for left eye will be rendered on the top half of the image. View for right eye will be on the bottom half of the image.&lt;/p&gt;&lt;p&gt;Anaglyph red/cyan - Image will be rendered as an anaglyph dedicated for red/cyan 3D glasses. Using this option it is possible to edit the fractal with 3D view directly in the application window using regular display.  Cheap 3D glasses are all that is required. For fractal exploration it is recommended to not use SSAO ambient occlusion, because it is rendered in 2 passes (try to use &amp;quot;Fast&amp;quot; ambient occlusion).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
@@ -881,7 +906,7 @@ no ambient occlusion)</string>
          </widget>
         </item>
         <item row="1" column="1" colspan="2">
-         <widget class="QComboBox" name="comboBox_perspective_type">
+         <widget class="MyComboBox" name="comboBox_perspective_type">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -986,9 +1011,10 @@ no ambient occlusion)</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>MyDoubleSpinBox</class>
-   <extends>QDoubleSpinBox</extends>
-   <header>my_double_spin_box.h</header>
+   <class>MyGroupBox</class>
+   <extends>QGroupBox</extends>
+   <header>my_group_box.h</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>MySpinBox</class>
@@ -1006,10 +1032,29 @@ no ambient occlusion)</string>
    <header>my_line_edit.h</header>
   </customwidget>
   <customwidget>
-   <class>MyGroupBox</class>
-   <extends>QGroupBox</extends>
-   <header>my_group_box.h</header>
-   <container>1</container>
+   <class>cButtonLoadSettingsFromWidget</class>
+   <extends>QPushButton</extends>
+   <header>buton_load_settings_from_widget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>cButtonSaveSettingsFromWidget</class>
+   <extends>QPushButton</extends>
+   <header>buton_save_settings_from_widget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>cButtonResetSettingsFromWidget</class>
+   <extends>QPushButton</extends>
+   <header>buton_reset_settings_from_widget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyComboBox</class>
+   <extends>QComboBox</extends>
+   <header>my_combo_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyDoubleSpinBox</class>
+   <extends>QDoubleSpinBox</extends>
+   <header>my_double_spin_box.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

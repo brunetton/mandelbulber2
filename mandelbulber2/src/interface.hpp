@@ -85,6 +85,9 @@ public:
 		CVector3 point, cParameterContainer *par, cFractalContainer *parFractal);
 	void SetByMouse(
 		CVector2<double> screenPoint, Qt::MouseButton button, const QList<QVariant> &mode);
+	void MouseDragStart(CVector2<double> screenPoint, Qt::MouseButtons, const QList<QVariant> &mode);
+	void MouseDragFinish();
+	void MouseDragDelta(int dx, int dy);
 	void MovementStepModeChanged(int mode) const;
 	void CameraMovementModeChanged(int index);
 	void Undo();
@@ -112,6 +115,10 @@ public:
 	void DetachMainImageWidget();
 	void AttachMainImageWidget();
 	static void ColorizeGroupBoxes(QWidget *window, int randomSeed);
+	void SaveLocalSettings(const QWidget *widget);
+	void LoadLocalSettings(const QWidget *widget);
+	void ResetLocalSettings(const QWidget *widget);
+	QStringList CreateListOfParametersInWidget(const QWidget *widget);
 
 	bool QuitApplicationDialog();
 
@@ -145,6 +152,20 @@ public:
 
 	bool stopRequest;
 	bool repeatRequest; // request to repeat start loop
+
+	struct sCameraDragData
+	{
+		bool cameraDraggingStarted;
+		CVector2<double> startScreenPoint;
+		CVector2<double> startNormalizedPoint;
+		double startZ;
+		CVector3 startCamera;
+		CVector3 startTarget;
+		CVector3 startTopVector;
+		CVector3 startIndicatedPoint;
+		Qt::MouseButtons button;
+		QElapsedTimer lastRefreshTime;
+	} cameraDragData;
 };
 
 extern cInterface *gMainInterface;

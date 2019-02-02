@@ -500,6 +500,7 @@ void InitParams(cParameterContainer *par)
 	par->addParam("alpha_enabled", false, morphNone, paramApp);
 	par->addParam("zbuffer_enabled", false, morphNone, paramApp);
 	par->addParam("normal_enabled", false, morphNone, paramApp);
+	par->addParam("specular_enabled", false, morphNone, paramApp);
 
 	par->addParam("color_quality", int(ImageFileSave::IMAGE_CHANNEL_QUALITY_8), morphNone, paramApp);
 	par->addParam("alpha_quality", int(ImageFileSave::IMAGE_CHANNEL_QUALITY_8), morphNone, paramApp);
@@ -507,11 +508,14 @@ void InitParams(cParameterContainer *par)
 		"zbuffer_quality", int(ImageFileSave::IMAGE_CHANNEL_QUALITY_32), morphNone, paramApp);
 	par->addParam(
 		"normal_quality", int(ImageFileSave::IMAGE_CHANNEL_QUALITY_32), morphNone, paramApp);
+	par->addParam(
+		"specular_quality", int(ImageFileSave::IMAGE_CHANNEL_QUALITY_32), morphNone, paramApp);
 
 	par->addParam("color_postfix", QString(""), morphNone, paramApp);
 	par->addParam("alpha_postfix", QString("_alpha"), morphNone, paramApp);
 	par->addParam("zbuffer_postfix", QString("_zbuffer"), morphNone, paramApp);
 	par->addParam("normal_postfix", QString("_normal"), morphNone, paramApp);
+	par->addParam("specular_postfix", QString("_specular"), morphNone, paramApp);
 
 	par->addParam("append_alpha_png", true, morphNone, paramApp);
 	par->addParam("linear_colorspace", true, morphNone, paramApp);
@@ -532,6 +536,7 @@ void InitParams(cParameterContainer *par)
 	par->addParam("opencl_memory_limit", 512, 1, 10000, morphNone, paramApp);
 	par->addParam("opencl_disable_build_cache", false, morphNone, paramApp);
 	par->addParam("opencl_use_fast_relaxed_math", true, morphNone, paramApp);
+	par->addParam("opencl_job_size_multiplier", 2, morphNone, paramApp);
 
 	WriteLog("Parameters initialization finished", 3);
 }
@@ -550,7 +555,9 @@ void InitFractalParams(cParameterContainer *par)
 	QStringList qslOrderOfFolds({"type1", "type2", "type3", "type4", "type5"});
 	QStringList qslOrderOfTransf({"typeT1", "typeT1Mod", "typeT2", "typeT3", "typeT4", "typeT5b"});
 	QStringList qslOrderOf3Folds({"type1", "type2", "type3"});
-	// hmmm?? comboBoxes
+	QStringList qslCombo4({"type1", "type2", "type3", "type4"});
+	QStringList qslCombo5({"type1", "type2", "type3", "type4", "type5"});
+	QStringList qslCombo6({"type1", "type2", "type3", "type4", "type5", "type6"});
 
 	par->addParam("power", 9.0, morphAkima, paramStandard);
 	par->addParam("alpha_angle_offset", 0.0, morphAkimaAngle, paramStandard);
@@ -660,6 +667,15 @@ void InitFractalParams(cParameterContainer *par)
 	par->addParam("magTransf_order_of_transf_3", 0, morphNone, paramStandard, qslOrderOfTransf);
 	par->addParam("magTransf_order_of_transf_4", 0, morphNone, paramStandard, qslOrderOfTransf);
 	par->addParam("magTransf_order_of_transf_5", 0, morphNone, paramStandard, qslOrderOfTransf);
+
+	// Combo4
+	par->addParam("combo4", 0, morphNone, paramStandard, qslCombo4);
+
+	// Combo5
+	par->addParam("combo5", 0, morphNone, paramStandard, qslCombo5);
+
+	// Combo6
+	par->addParam("combo6", 0, morphNone, paramStandard, qslCombo6);
 
 	// asurf3Folds
 	par->addParam("aSurf3Folds_order_of_folds_1", 0, morphNone, paramStandard, qslOrderOf3Folds);
@@ -910,6 +926,7 @@ void InitFractalParams(cParameterContainer *par)
 	par->addParam("transf_offset_000", CVector3(0.0, 0.0, 0.0), morphAkima, paramStandard);
 	par->addParam("transf_offsetA_000", CVector3(0.0, 0.0, 0.0), morphAkima, paramStandard);
 	par->addParam("transf_offsetF_000", CVector3(0.0, 0.0, 0.0), morphAkima, paramStandard);
+	par->addParam("transf_offset_010", CVector3(0.0, 1.0, 0.0), morphAkima, paramStandard);
 	par->addParam("transf_offset_100", CVector3(1.0, 0.0, 0.0), morphAkima, paramStandard);
 	par->addParam("transf_offset_1105", CVector3(1.0, 1.0, 0.5), morphAkima, paramStandard);
 	par->addParam("transf_offset_111", CVector3(1.0, 1.0, 1.0), morphAkima, paramStandard);
@@ -946,7 +963,7 @@ void InitFractalParams(cParameterContainer *par)
 	par->addParam("transf_offset_0000", CVector4(0.0, 0.0, 0.0, 0.0), morphAkima, paramStandard);
 	par->addParam("transf_offset_1111", CVector4(1.0, 1.0, 1.0, 1.0), morphAkima, paramStandard);
 	par->addParam("transf_offsetA_1111", CVector4(1.0, 1.0, 1.0, 1.0), morphAkima, paramStandard);
-
+	par->addParam("transf_offset_2222", CVector4(2.0, 2.0, 2.0, 2.0), morphAkima, paramStandard);
 	par->addParam(
 		"transf_addition_constant_111d5", CVector4(1.0, 1.0, 1.0, 0.5), morphAkima, paramStandard);
 	par->addParam(

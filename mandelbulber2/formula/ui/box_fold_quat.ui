@@ -612,7 +612,7 @@ offset:</string>
       <item>
        <widget class="QGroupBox" name="groupBox_4">
         <property name="title">
-         <string>Viariable scale</string>
+         <string>Variable scale</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_6">
          <property name="leftMargin">
@@ -692,7 +692,7 @@ offset:</string>
             <number>2</number>
            </property>
            <item row="3" column="0" colspan="2">
-            <widget class="QCheckBox" name="checkBox_transf_function_enabledM_false">
+            <widget class="MyCheckBox" name="checkBox_transf_function_enabledM_false">
              <property name="text">
               <string>enable vary scale mode B</string>
              </property>
@@ -1692,7 +1692,7 @@ offset:</string>
       <item>
        <widget class="QGroupBox" name="groupBox_5">
         <property name="title">
-         <string>Menger Sponge Start Function</string>
+         <string>abs function z = abs( z + const.A)</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_8">
          <property name="leftMargin">
@@ -1707,13 +1707,6 @@ offset:</string>
          <property name="bottomMargin">
           <number>2</number>
          </property>
-         <item>
-          <widget class="QLabel" name="label">
-           <property name="text">
-            <string>abs function z = abs( z + const.A)</string>
-           </property>
-          </widget>
-         </item>
          <item>
           <layout class="QGridLayout" name="gridLayout_33" columnstretch="0,1">
            <property name="spacing">
@@ -1823,7 +1816,7 @@ offset:</string>
       <item>
        <widget class="QGroupBox" name="groupBox_6">
         <property name="title">
-         <string>Menger Sponge End Function</string>
+         <string>Apply Constants</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_9">
          <property name="leftMargin">
@@ -1838,13 +1831,6 @@ offset:</string>
          <property name="bottomMargin">
           <number>2</number>
          </property>
-         <item>
-          <widget class="QLabel" name="label_7">
-           <property name="text">
-            <string>Apply Constants</string>
-           </property>
-          </widget>
-         </item>
          <item>
           <layout class="QGridLayout" name="gridLayout_63" columnstretch="0,0,0,1">
            <property name="spacing">
@@ -1991,7 +1977,7 @@ offset:</string>
             </widget>
            </item>
            <item row="3" column="1" colspan="3">
-            <widget class="QCheckBox" name="checkBox_transf_function_enabled">
+            <widget class="MyCheckBox" name="checkBox_transf_function_enabled">
              <property name="text">
               <string>Conditional mode: if ( z.z &lt; limit ) z.z = z.z;</string>
              </property>
@@ -2357,7 +2343,7 @@ offset:</string>
          </widget>
         </item>
         <item row="10" column="1" colspan="3">
-         <widget class="QCheckBox" name="checkBox_transf_function_enabledAx_false">
+         <widget class="MyCheckBox" name="checkBox_transf_function_enabledAx_false">
           <property name="text">
            <string>alternate add or subtract offset</string>
           </property>
@@ -2369,7 +2355,7 @@ offset:</string>
     </widget>
    </item>
    <item>
-    <widget class="QCheckBox" name="checkBox_analyticDE_enabled_false">
+    <widget class="MyCheckBox" name="checkBox_analyticDE_enabled_false">
      <property name="text">
       <string>enable Analytic DE tweak mode</string>
      </property>
@@ -2412,10 +2398,10 @@ offset:</string>
         <number>2</number>
        </property>
        <property name="minimum">
-        <double>-36000.000000000000000</double>
+        <double>0.000000000000000</double>
        </property>
        <property name="maximum">
-        <double>36000.000000000000000</double>
+        <double>99.989999999999995</double>
        </property>
        <property name="singleStep">
         <double>0.100000000000000</double>
@@ -2440,10 +2426,10 @@ offset:</string>
         <number>2</number>
        </property>
        <property name="minimum">
-        <double>-36000.000000000000000</double>
+        <double>-99.989999999999995</double>
        </property>
        <property name="maximum">
-        <double>36000.000000000000000</double>
+        <double>99.989999999999995</double>
        </property>
        <property name="singleStep">
         <double>0.100000000000000</double>
@@ -2947,6 +2933,11 @@ offset:</string>
    <class>MySpinBox</class>
    <extends>QSpinBox</extends>
    <header>my_spin_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>my_check_box.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

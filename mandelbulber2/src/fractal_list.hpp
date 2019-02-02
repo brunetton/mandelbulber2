@@ -104,9 +104,9 @@ enum enumFractalFormula
 	mengerMod1 = 61, // fix V2.10
 	quaternion3d = 62,
 	aexionOctopusMod = 63,
-	aboxMod1 = 64,				// fix scale v2.11 v2.12
-	mandelbulbMulti = 65, // updated V2.08
-	benesiPineTree = 66,
+	aboxMod1 = 64,				 // fix scale v2.11 v2.12
+	mandelbulbMulti = 65,	// updated V2.08
+	benesiPineTree = 66,	 // updated addCpixel V2.16
 	benesiT1PineTree = 67, // updated V2.09, rot2 v2.14
 	msltoeSym3Mod = 68,
 	msltoeSym4Mod = 69,
@@ -141,13 +141,13 @@ enum enumFractalFormula
 	amazingSurfMulti = 97,
 	// V2.09
 	mengerCrossKIFS = 98,
-	mengerPrismShape = 99, // fix T1 T1M V2.10. DE v2.15
-	benesiMagTransforms = 100,
+	mengerPrismShape = 99,		 // fix T1 T1M V2.10. DE v2.15
+	benesiMagTransforms = 100, // updated addCpixel V2.16
 	pseudoKleinianStdDE = 101, // fix T1 T1M V2.10
 	bristorbrot4d = 102,
 	pseudoKleinian = 103,				// fix DE V2.10
 	pseudoKleinianMod1 = 104,		// fix T1 T1M V2.10 & DE
-	benesiPwr2Mandelbulb = 105, // rot2 v2.14
+	benesiPwr2Mandelbulb = 105, // rot2 v2.14, updated addCpixel V2.16
 	mengerCrossMod1 = 106,
 	// V2.10
 	mengerPrismShape2 = 107, // DE v2.15
@@ -185,6 +185,15 @@ enum enumFractalFormula
 	aboxModKaliV2 = 135,
 	// 2.15
 	aboxModKaliV3 = 136,
+	// 2.16
+	mandelbulbAbsPower2 = 137,
+	mandelbulbPow2V2 = 138,
+	riemannSphereMsltoeV2 = 139,
+	aboxSurfBox = 140,
+	boxFoldBulbMenger = 141,
+	vicsek = 142,
+
+
 
 	// 152 to 172 reserved for scator
 	scatorPower2Imaginary = 152, // fixed r calc v2.14
@@ -287,6 +296,11 @@ enum enumFractalFormula
 	transfBlockify = 1085,
 	transfAddCpixelScator = 1086,
 	transfAddCpixelSinOrCos = 1087,
+	// 2.16
+	transfSurfBoxFoldV2 = 1088,
+	transfSurfBoxFoldV24d = 1089,
+
+
 
 	// hybrid color trial
 	transfHybridColor = 2000,

@@ -44,9 +44,11 @@
 
 #include "qt/color_palette_widget.h"
 #include "qt/file_select_widget.h"
+#include "qt/formula_combo_box.h"
 #include "qt/material_selector.h"
 #include "qt/my_check_box.h"
 #include "qt/my_color_button.h"
+#include "qt/my_combo_box.h"
 #include "qt/my_double_spin_box.h"
 #include "qt/my_group_box.h"
 #include "qt/my_line_edit.h"
@@ -443,10 +445,18 @@ void SynchronizeInterfaceQComboBox(
 	QList<QComboBox *>::iterator it;
 	for (it = widgets.begin(); it != widgets.end(); ++it)
 	{
-		widgetProperties props = parseWidgetProperties((*it), {"QComboBox", "cFormulaComboBox"});
+		widgetProperties props =
+			parseWidgetProperties((*it), {"QComboBox", "MyComboBox", "cFormulaComboBox"});
 		if (props.allowed)
 		{
 			QComboBox *comboBox = *it;
+
+			if (props.className == QString("MyComboBox"))
+			{
+				MyComboBox *myComboBox = static_cast<MyComboBox *>(*it);
+				myComboBox->AssignParameterContainer(par);
+				myComboBox->AssignParameterName(props.paramName);
+			}
 
 			if (props.typeName == QString("comboBox"))
 			{
@@ -464,12 +474,18 @@ void SynchronizeInterfaceQComboBox(
 					int selection = par->Get<int>(props.paramName);
 					if (props.paramName.left(7) == QString("formula"))
 					{
-						for (int i = 0; i < fractalList.size(); i++)
+						cFormulaComboBox *formulaComboBox = dynamic_cast<cFormulaComboBox *>(comboBox);
+						if (formulaComboBox)
 						{
-							if (fractalList[i].internalID == selection)
+							formulaComboBox->AssignParameterContainer(par);
+							formulaComboBox->AssignParameterName(props.paramName);
+							for (int i = 0; i < fractalList.size(); i++)
 							{
-								selection = comboBox->findData(i);
-								break;
+								if (fractalList[i].internalID == selection)
+								{
+									selection = comboBox->findData(i);
+									break;
+								}
 							}
 						}
 					}
