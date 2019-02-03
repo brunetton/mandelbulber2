@@ -1,18 +1,23 @@
 #!/bin/sh
 
+# This script must be run as root, or root-priviledged user
+
+
 export CXXFLAGS="-march=native -msse2"
 
 set -e # if any of the commands fail the script will exit immediately
 
-# cd mandelbulber2/qmake/
-# qmake mandelbulber-opencl.pro
-# make -j4
+echo "*** Compiling ..."
 
-# echo " installing the program "
+cd mandelbulber2/qmake/
+qmake mandelbulber-opencl.pro
+make -j4
 
-# sudo install mandelbulber2 /usr/bin
+echo "*** Installing the program "
 
-echo "creating links to files from formula and deploy folders in /usr/share/mandelbulber2 directory if you change anything in that folder you will not need to reinstall the program You have to remember to not delete mandelbulber2 folder located here"
+sudo install mandelbulber2 /usr/bin
+
+echo "*** Creating links to files from formula and deploy folders in /usr/share/mandelbulber2 directory if you change anything in that folder you will not need to reinstall the program You have to remember to not delete mandelbulber2 folder located here"
 
 MANDELBULBER_SHARE="/usr/share/mandelbulber2"
 
