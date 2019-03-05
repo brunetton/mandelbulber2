@@ -37,8 +37,14 @@
 #include "src/interface.hpp"
 
 cButtonSaveSettingsFromWidget::cButtonSaveSettingsFromWidget(QWidget *_parent)
-		: QPushButton(_parent)
+		: QToolButton(_parent)
 {
+	QVBoxLayout *layout = new QVBoxLayout;
+	layout->setContentsMargins(1, 1, 1, 1);
+	setLayout(layout);
+	setIcon(QIcon(":system/icons/document-save.svg"));
+	setIconSize(QSize(16, 16));
+	setMaximumSize(18, 18);
 	connect(this, SIGNAL(clicked()), this, SLOT(slotPressedButtonLocalSave()));
 
 	QWidget *parentWidget = dynamic_cast<QWidget *>(parent());
@@ -69,5 +75,5 @@ void cButtonSaveSettingsFromWidget::showEvent(QShowEvent *event)
 	{
 		setToolTip(tr("Save settings only from %1").arg(parentWidget->objectName()));
 	}
-	QPushButton::showEvent(event);
+	QToolButton::showEvent(event);
 }
