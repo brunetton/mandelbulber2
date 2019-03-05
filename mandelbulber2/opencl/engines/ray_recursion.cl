@@ -1,7 +1,7 @@
 /**
  * Mandelbulber v2, a 3D fractal generator       ,=#MKNmMMKmmßMNWy,
  *                                             ,B" ]L,,p%%%,,,§;, "K
- * Copyright (C) 2017-18 Mandelbulber Team     §R-==%w["'~5]m%=L.=~5N
+ * Copyright (C) 2017-19 Mandelbulber Team     §R-==%w["'~5]m%=L.=~5N
  *                                        ,=mm=§M ]=4 yJKA"/-Nsaj  "Bw,==,,
  * This file is part of Mandelbulber.    §R.r= jw",M  Km .mM  FW ",§=ß., ,TN
  *                                     ,4R =%["w[N=7]J '"5=],""]]M,w,-; T=]M
@@ -54,7 +54,8 @@ typedef struct
 	int count;
 } sRayMarchingOut;
 
-typedef enum {
+typedef enum
+{
 	rayBranchReflection = 0,
 	rayBranchRefraction = 1,
 	rayBranchDone = 2,
@@ -322,6 +323,22 @@ sRayRecursionOut RayRecursion(sRayRecursionIn in, sRenderData *renderData,
 						shaderInputData.distThresh, shaderInputData.invertMode, &calcParam);
 				shaderInputData.normal = normal;
 
+#ifdef USE_ROUGH_SURFACE
+				if (shaderInputData.material->roughSurface)
+				{
+					float roughness = shaderInputData.material->surfaceRoughness;
+					// every axis is calculated twice because of simple Random() function (increase
+					// randomness)
+					normal.x += roughness * (Random(20000, randomSeed) / 10000.0f - 1.0f);
+					normal.x += roughness * (Random(20000, randomSeed) / 10000.0f - 1.0f);
+					normal.y += roughness * (Random(20000, randomSeed) / 10000.0f - 1.0f);
+					normal.y += roughness * (Random(20000, randomSeed) / 10000.0f - 1.0f);
+					normal.z += roughness * (Random(20000, randomSeed) / 10000.0f - 1.0f);
+					normal.z += roughness * (Random(20000, randomSeed) / 10000.0f - 1.0f);
+					shaderInputData.normal = normal = normalize(normal);
+				}
+#endif // USE_ROUGH_SURFACE
+
 #ifdef USE_TEXTURES
 #ifdef USE_NORMAL_MAP_TEXTURE
 				normal = NormalMapShader(&shaderInputData, renderData, objectData,
@@ -584,7 +601,7 @@ sRayRecursionOut RayRecursion(sRayRecursionIn in, sRenderData *renderData,
 				objectShader += globalIllumination;
 #endif // MONTE_CARLO_DOF_GLOBAL_ILLUMINATION
 
-// calculate reflectance according to Fresnel equations
+				// calculate reflectance according to Fresnel equations
 
 #if defined(USE_REFRACTION) || defined(USE_REFLECTANCE)
 				// prepare refraction values
@@ -623,6 +640,15 @@ sRayRecursionOut RayRecursion(sRayRecursionIn in, sRenderData *renderData,
 				// combine all results
 				resultShader.xyz = (objectShader);
 
+#ifdef USE_REFRACTION
+				if (shaderInputData.material->transparencyColorTheSame)
+					transparentShader *= (float4){objectColour.s0, objectColour.s1, objectColour.s2, 1.0f};
+				else
+					transparentShader *= (float4){shaderInputData.material->transparencyColor.s0,
+						shaderInputData.material->transparencyColor.s1,
+						shaderInputData.material->transparencyColor.s2, 1.0f};
+#endif // USE_REFRACTION
+
 #if defined(USE_REFRACTION) || defined(USE_REFLECTANCE)
 				if (renderData->reflectionsMax > 0)
 				{
@@ -643,16 +669,24 @@ sRayRecursionOut RayRecursion(sRayRecursionIn in, sRenderData *renderData,
 
 					reflectDiffused *= iridescence;
 
+					if (shaderInputData.material->reflectionsColorTheSame)
+						reflectDiffused *= objectColour;
+					else
+						reflectDiffused *= shaderInputData.material->reflectionsColor;
+
 #ifdef USE_REFRACTION
 					resultShader = transparentShader * transparent * reflectanceN
 												 + (1.0f - transparent * reflectanceN) * resultShader;
 #endif // USE_REFRACTION
 
 #ifdef USE_REFLECTANCE
+					float reflectDiffusedAvg =
+						(reflectDiffused.s0 + reflectDiffused.s1 + reflectDiffused.s2) / 3.0f;
+
 					float4 reflectDiffused4 =
-						(float4){reflectDiffused.s0, reflectDiffused.s1, reflectDiffused.s2, 1.0};
+						(float4){reflectDiffused.s0, reflectDiffused.s1, reflectDiffused.s2, 1.0f};
 					resultShader = reflectShader * reflectDiffused4 * reflectance
-												 + (1.0f - reflectDiffused4 * reflectance) * resultShader;
+												 + (1.0f - reflectDiffusedAvg * reflectance) * resultShader;
 #endif // USE_REFLECTANCE
 				}
 #endif // USE_REFRACTION || USE_REFLECTANCE

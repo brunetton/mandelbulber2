@@ -1,7 +1,7 @@
 /**
  * Mandelbulber v2, a 3D fractal generator       ,=#MKNmMMKmmßMNWy,
  *                                             ,B" ]L,,p%%%,,,§;, "K
- * Copyright (C) 2017-18 Mandelbulber Team     §R-==%w["'~5]m%=L.=~5N
+ * Copyright (C) 2017-19 Mandelbulber Team     §R-==%w["'~5]m%=L.=~5N
  *                                        ,=mm=§M ]=4 yJKA"/-Nsaj  "Bw,==,,
  * This file is part of Mandelbulber.    §R.r= jw",M  Km .mM  FW ",§=ß., ,TN
  *                                     ,4R =%["w[N=7]J '"5=],""]]M,w,-; T=]M
@@ -644,6 +644,7 @@ typedef struct
 	cl_float4 offsetA1111;
 	cl_float4 additionConstant111d5;
 	cl_float4 constantMultiplier1220;
+	cl_float4 scale0000;
 
 	matrix33 rotationMatrix;
 	matrix33 rotationMatrix2;
@@ -700,6 +701,10 @@ typedef struct
 	cl_int juliaMode;
 	cl_int rotationEnabled;
 	cl_int rotation2EnabledFalse;
+	cl_int sphereInversionEnabledFalse;
+	cl_int spheresEnabled;
+
+	cl_int functionEnabledTempFalse;
 } sFractalTransformCommonCl;
 
 typedef struct
@@ -1306,6 +1311,7 @@ inline sFractalTransformCommonCl clCopySFractalTransformCommonCl(
 	target.offsetA1111 = toClFloat4(source.offsetA1111);
 	target.additionConstant111d5 = toClFloat4(source.additionConstant111d5);
 	target.constantMultiplier1220 = toClFloat4(source.constantMultiplier1220);
+	target.scale0000 = toClFloat4(source.scale0000);
 	target.rotationMatrix = toClMatrix33(source.rotationMatrix);
 	target.rotationMatrix2 = toClMatrix33(source.rotationMatrix2);
 	target.rotationMatrixVary = toClMatrix33(source.rotationMatrixVary);
@@ -1359,6 +1365,9 @@ inline sFractalTransformCommonCl clCopySFractalTransformCommonCl(
 	target.juliaMode = source.juliaMode;
 	target.rotationEnabled = source.rotationEnabled;
 	target.rotation2EnabledFalse = source.rotation2EnabledFalse;
+	target.sphereInversionEnabledFalse = source.sphereInversionEnabledFalse;
+	target.spheresEnabled = source.spheresEnabled;
+	target.functionEnabledTempFalse = source.functionEnabledTempFalse;
 	return target;
 }
 

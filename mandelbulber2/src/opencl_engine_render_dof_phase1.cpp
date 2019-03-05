@@ -1,7 +1,7 @@
 /**
  * Mandelbulber v2, a 3D fractal generator       ,=#MKNmMMKmmßMNWy,
  *                                             ,B" ]L,,p%%%,,,§;, "K
- * Copyright (C) 2017-18 Mandelbulber Team     §R-==%w["'~5]m%=L.=~5N
+ * Copyright (C) 2017-19 Mandelbulber Team     §R-==%w["'~5]m%=L.=~5N
  *                                        ,=mm=§M ]=4 yJKA"/-Nsaj  "Bw,==,,
  * This file is part of Mandelbulber.    §R.r= jw",M  Km .mM  FW ",§=ß., ,TN
  *                                     ,4R =%["w[N=7]J '"5=],""]]M,w,-; T=]M
@@ -137,14 +137,15 @@ bool cOpenClEngineRenderDOFPhase1::LoadSourcesAndCompile(const cParameterContain
 void cOpenClEngineRenderDOFPhase1::RegisterInputOutputBuffers(const cParameterContainer *params)
 {
 	Q_UNUSED(params);
-	inputBuffers << sClInputOutputBuffer(sizeof(cl_float), numberOfPixels, "z-buffer");
-	inputBuffers << sClInputOutputBuffer(sizeof(cl_float4), numberOfPixels, "image buffer");
-	outputBuffers << sClInputOutputBuffer(sizeof(cl_float4), optimalJob.stepSize, "output buffer");
+	inputBuffers[0] << sClInputOutputBuffer(sizeof(cl_float), numberOfPixels, "z-buffer");
+	inputBuffers[0] << sClInputOutputBuffer(sizeof(cl_float4), numberOfPixels, "image buffer");
+	outputBuffers[0] << sClInputOutputBuffer(sizeof(cl_float4), optimalJob.stepSize, "output buffer");
 }
 
-bool cOpenClEngineRenderDOFPhase1::AssignParametersToKernelAdditional(int argIterator)
+bool cOpenClEngineRenderDOFPhase1::AssignParametersToKernelAdditional(
+	int argIterator, int deviceIndex)
 {
-	int err = kernel->setArg(argIterator++, paramsDOF); // pixel offset
+	int err = clKernels.at(deviceIndex)->setArg(argIterator++, paramsDOF); // pixel offset
 	if (!checkErr(err, "kernel->setArg(2, pixelIndex)"))
 	{
 		emit showErrorMessage(
@@ -165,8 +166,8 @@ bool cOpenClEngineRenderDOFPhase1::ProcessQueue(
 	if (pixelsLeftY < stepSizeY) stepSizeY = pixelsLeftY;
 
 	// optimalJob.stepSize = stepSize;
-	cl_int err = queue->enqueueNDRangeKernel(
-		*kernel, cl::NDRange(jobX, jobY), cl::NDRange(stepSizeX, stepSizeY), cl::NullRange);
+	cl_int err = clQueues.at(0)->enqueueNDRangeKernel(
+		*clKernels.at(0), cl::NDRange(jobX, jobY), cl::NDRange(stepSizeX, stepSizeY), cl::NullRange);
 	if (!checkErr(err, "CommandQueue::enqueueNDRangeKernel()"))
 	{
 		emit showErrorMessage(
@@ -203,20 +204,15 @@ bool cOpenClEngineRenderDOFPhase1::Render(cImage *image, bool *stopRequest)
 		// copy zBuffer and image to input buffers
 		for (qint64 i = 0; i < numberOfPixels; i++)
 		{
-			((cl_float *)inputBuffers[zBufferIndex].ptr.data())[i] = image->GetZBufferPtr()[i];
+			((cl_float *)inputBuffers[0][zBufferIndex].ptr.data())[i] = image->GetZBufferPtr()[i];
 			sRGBFloat imagePixel = image->GetPostImageFloatPtr()[i];
 			float alpha = image->GetAlphaBufPtr()[i] / 65535.0;
-			((cl_float4 *)inputBuffers[imageIndex].ptr.data())[i] =
+			((cl_float4 *)inputBuffers[0][imageIndex].ptr.data())[i] =
 				cl_float4{imagePixel.R, imagePixel.G, imagePixel.B, alpha};
 		}
 
 		// writing data to queue
 		if (!WriteBuffersToQueue()) return false;
-
-		// TODO:
-		// insert device for loop here
-		// requires initialization for all opencl devices
-		// requires optimalJob for all opencl devices
 
 		for (int gridY = 0; gridY <= gridHeight; gridY++)
 		{
@@ -232,7 +228,7 @@ bool cOpenClEngineRenderDOFPhase1::Render(cImage *image, bool *stopRequest)
 				if (jobWidth2 <= 0) continue;
 
 				// assign parameters to kernel
-				if (!AssignParametersToKernel()) return false;
+				if (!AssignParametersToKernel(0)) return false;
 
 				// processing queue
 				if (!ProcessQueue(jobX, jobY, pixelsLeftX, pixelsLeftY)) return false;
@@ -244,14 +240,14 @@ bool cOpenClEngineRenderDOFPhase1::Render(cImage *image, bool *stopRequest)
 
 				pixelsRendered += jobWidth2 * jobHeight2;
 
-				if (!ReadBuffersFromQueue()) return false;
+				if (!ReadBuffersFromQueue(0)) return false;
 
 				for (int y = 0; y < jobHeight2; y++)
 				{
 					for (int x = 0; x < jobWidth2; x++)
 					{
 						cl_float4 pixelCl =
-							((cl_float4 *)outputBuffers[outputIndex].ptr.data())[x + y * jobWidth2];
+							((cl_float4 *)outputBuffers[0][outputIndex].ptr.data())[x + y * jobWidth2];
 						sRGBFloat pixel = {pixelCl.s[0], pixelCl.s[1], pixelCl.s[2]};
 						quint16 alpha = pixelCl.s[3] * 65535;
 
@@ -260,14 +256,14 @@ bool cOpenClEngineRenderDOFPhase1::Render(cImage *image, bool *stopRequest)
 					}
 				}
 
-				if (*stopRequest)
+				if (*stopRequest || systemData.globalStopRequest)
 				{
 					return false;
 				}
 			}
 		}
 
-		if (!*stopRequest)
+		if (!*stopRequest || systemData.globalStopRequest)
 		{
 			WriteLogDouble(
 				"cOpenClEngineRenderDOFPhase1: OpenCL Rendering time [s]", timer.nsecsElapsed() / 1.0e9, 2);

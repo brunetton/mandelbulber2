@@ -1,7 +1,7 @@
 /**
  * Mandelbulber v2, a 3D fractal generator       ,=#MKNmMMKmmßMNWy,
  *                                             ,B" ]L,,p%%%,,,§;, "K
- * Copyright (C) 2017 Mandelbulber Team        §R-==%w["'~5]m%=L.=~5N
+ * Copyright (C) 2017-18 Mandelbulber Team     §R-==%w["'~5]m%=L.=~5N
  *                                        ,=mm=§M ]=4 yJKA"/-Nsaj  "Bw,==,,
  * This file is part of Mandelbulber.    §R.r= jw",M  Km .mM  FW ",§=ß., ,TN
  *                                     ,4R =%["w[N=7]J '"5=],""]]M,w,-; T=]M
@@ -32,19 +32,22 @@
  * These objects enable an OpenCL backend definition.
  */
 
+#ifdef USE_OPENCL
+
 #include "opencl_device.h"
 
 cOpenClDevice::cOpenClDevice()
 {
 	deviceIndex = 0;
 	enabled = false;
+	clDevice = nullptr;
 }
 
 #ifdef USE_OPENCL
-cOpenClDevice::cOpenClDevice(cl::Device device, sDeviceInformation info)
+cOpenClDevice::cOpenClDevice(const cl::Device *device, sDeviceInformation info)
 {
-	deviceIndex = 0;
 	clDevice = device;
+	deviceIndex = 0;
 	deviceInformation = info;
 	enabled = false;
 }
@@ -64,3 +67,5 @@ void cOpenClDevice::Disable()
 {
 	enabled = false;
 }
+
+#endif // USE_OPENCL

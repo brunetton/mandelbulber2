@@ -1,7 +1,7 @@
 /**
  * Mandelbulber v2, a 3D fractal generator       ,=#MKNmMMKmmßMNWy,
  *                                             ,B" ]L,,p%%%,,,§;, "K
- * Copyright (C) 2014-18 Mandelbulber Team     §R-==%w["'~5]m%=L.=~5N
+ * Copyright (C) 2014-19 Mandelbulber Team     §R-==%w["'~5]m%=L.=~5N
  *                                        ,=mm=§M ]=4 yJKA"/-Nsaj  "Bw,==,,
  * This file is part of Mandelbulber.    §R.r= jw",M  Km .mM  FW ",§=ß., ,TN
  *                                     ,4R =%["w[N=7]J '"5=],""]]M,w,-; T=]M
@@ -178,7 +178,7 @@ enum enumFractalFormula
 	coastalbrot = 129,
 	modulusMengerSponge = 130,
 	modulusMandelbulb = 131,
-	amazingSurfMod2 = 132, // fixed comboBox v2.14
+	amazingSurfMod2 = 132, // fixed: comboBox v2.14, type2 v2.17
 	// 2.14
 	mandelboxVariable = 133,
 	boxFold4dBulbPow2 = 134,
@@ -192,7 +192,11 @@ enum enumFractalFormula
 	aboxSurfBox = 140,
 	boxFoldBulbMenger = 141,
 	vicsek = 142,
-
+	// 2.17
+	josKleinianV2 = 143,
+	mandelbulbAtan2Power2 = 144,
+	bristorbrot2 = 145,
+	mandeltorus = 146,
 
 
 	// 152 to 172 reserved for scator
@@ -200,6 +204,9 @@ enum enumFractalFormula
 	scatorPower2Real = 156,			 // added V2.15
 	scatorPower2 = 173,					 // added V2.15
 	scatorPower2StdR = 174,			 // added V2.15
+
+	mandelbulbEye = 800,
+	mandelbulbEyeTest = 810,
 
 	transfAddConstant = 1001,
 	transfRotation = 1002,
@@ -268,10 +275,10 @@ enum enumFractalFormula
 	transfAddExp2Z = 1062, // updated V2.12
 	transfReciprocal3 = 1063,
 	transfRotationFolding = 1064,
-	transfAbsAddConditional = 1065,
+	transfAbsAddConditional = 1065, // scale fixed v2.17
 	transfReciprocal4d = 1066,
-	transfAbsAddConditional4d = 1067,
-	transfSphericalOffsetVCL = 1068, // fixed v2.14
+	transfAbsAddConditional4d = 1067, // scale fixed v2.17
+	transfSphericalOffsetVCL = 1068,	// fixed v2.14
 	transfRotation4d = 1069,
 	// 2.11
 	transfParabFold = 1070,
@@ -299,8 +306,9 @@ enum enumFractalFormula
 	// 2.16
 	transfSurfBoxFoldV2 = 1088,
 	transfSurfBoxFoldV24d = 1089,
-
-
+	// 2.17
+	transfBoxWrap4d = 1089,
+	transfSphericalInvV2 = 1090,
 
 	// hybrid color trial
 	transfHybridColor = 2000,

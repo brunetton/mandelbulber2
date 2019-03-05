@@ -1,7 +1,7 @@
 /**
  * Mandelbulber v2, a 3D fractal generator       ,=#MKNmMMKmmßMNWy,
  *                                             ,B" ]L,,p%%%,,,§;, "K
- * Copyright (C) 2017-18 Mandelbulber Team     §R-==%w["'~5]m%=L.=~5N
+ * Copyright (C) 2017-19 Mandelbulber Team     §R-==%w["'~5]m%=L.=~5N
  *                                        ,=mm=§M ]=4 yJKA"/-Nsaj  "Bw,==,,
  * This file is part of Mandelbulber.    §R.r= jw",M  Km .mM  FW ",§=ß., ,TN
  *                                     ,4R =%["w[N=7]J '"5=],""]]M,w,-; T=]M
@@ -76,11 +76,16 @@ public:
 	void DisableDevice(int index);
 	void EnableDevicesByHashList(const QString &list);
 
-	const std::vector<cl::Device> &getClDevices() const { return clDevices; }
-	const QList<cOpenClDevice> &getClWorkers() const { return clDeviceWorkers; }
-	QList<cl::Device> getEnabledDevices() const
+	const std::vector<cl::Device> &getClDevices(int contextIndex) const
 	{
-		QList<cl::Device> enabledDevices;
+		return clDevices[contextIndex];
+	}
+	const QList<cOpenClDevice> &getClWorkers() const { return clDeviceWorkers; }
+	cl::Context *getContext(int d) const { return contexts[d]; }
+
+	QList<const cl::Device *> getEnabledDevices() const
+	{
+		QList<const cl::Device *> enabledDevices;
 		for (auto i : selectedDevicesIndices)
 		{
 			enabledDevices.append(clDeviceWorkers[i].getDevice());
@@ -88,7 +93,7 @@ public:
 
 		return enabledDevices;
 	}
-	cl::Context *getContext() const { return context; }
+
 	QList<cOpenClDevice::sDeviceInformation> &getSelectedDevicesInformation()
 	{
 		selectedDevicesInformation = QList<cOpenClDevice::sDeviceInformation>();
@@ -99,6 +104,7 @@ public:
 
 		return selectedDevicesInformation;
 	}
+
 	int getSelectedPlatformIndex() { return selectedPlatformIndex; }
 
 	QList<int> getSelectedDevicesIndices() { return selectedDevicesIndices; }
@@ -111,19 +117,20 @@ protected:
 	static bool checkErr(cl_int err, QString functionName);
 
 private:
-	void ListOpenClDevices();
+	void ListOpenClDevices(int contextIndex);
 
 protected:
-	std::vector<cl::Device> clDevices;
+	QList<std::vector<cl::Device>> clDevices;
 	QList<cOpenClDevice> clDeviceWorkers;
 	QList<sPlatformInformation> platformsInformation;
 	QList<cOpenClDevice::sDeviceInformation> devicesInformation;
 	QList<cOpenClDevice::sDeviceInformation> selectedDevicesInformation;
 	QList<cl::Device> enabledDevices;
 
-	// The Multi-GPU System only supports (1) platform
+	// The Multi-GPU System only supports (1) platform - separate cotexts for each device
+	// because even when used different therads, the devices blocked each other.
 	// 1 context == 1 platform
-	cl::Context *context;
+	QVector<cl::Context *> contexts;
 	bool isNVidia;
 	bool isAMD;
 

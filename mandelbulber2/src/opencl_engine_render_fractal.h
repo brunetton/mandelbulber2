@@ -1,7 +1,7 @@
 /**
  * Mandelbulber v2, a 3D fractal generator       ,=#MKNmMMKmmßMNWy,
  *                                             ,B" ]L,,p%%%,,,§;, "K
- * Copyright (C) 2017-18 Mandelbulber Team     §R-==%w["'~5]m%=L.=~5N
+ * Copyright (C) 2017-19 Mandelbulber Team     §R-==%w["'~5]m%=L.=~5N
  *                                        ,=mm=§M ]=4 yJKA"/-Nsaj  "Bw,==,,
  * This file is part of Mandelbulber.    §R.r= jw",M  Km .mM  FW ",§=ß., ,TN
  *                                     ,4R =%["w[N=7]J '"5=],""]]M,w,-; T=]M
@@ -39,6 +39,7 @@
 #include "fractal_enums.h"
 #include "include_header_wrapper.hpp"
 #include "opencl_engine.h"
+#include "rendered_tile_data.hpp"
 #include "statistics.h"
 
 // custom includes
@@ -79,13 +80,15 @@ public:
 	void RegisterInputOutputBuffers(const cParameterContainer *params) override;
 	bool PreAllocateBuffers(const cParameterContainer *params) override;
 	bool PrepareBufferForBackground(sRenderData *renderData);
-	bool AssignParametersToKernelAdditional(int argIterator) override;
+	bool AssignParametersToKernelAdditional(int argIterator, int deviceIndex) override;
 	bool WriteBuffersToQueue();
 	bool ProcessQueue(size_t jobX, size_t jobY, size_t pixelsLeftX, size_t pixelsLeftY);
 	bool ReadBuffersFromQueue();
 
 	// render 3D fractal
 	bool Render(cImage *image, bool *stopRequest, sRenderData *renderData);
+	// render 3D fractal
+	bool RenderMulti(cImage *image, bool *stopRequest, sRenderData *renderData);
 
 	// render 2D slice with fractal
 	bool Render(double *distances, double *colors, int sliceIndex, bool *stopRequest,
@@ -110,18 +113,18 @@ private:
 	static QString toCamelCase(const QString &s);
 
 	QScopedPointer<sClInConstants> constantInBuffer;
-	QScopedPointer<cl::Buffer> inCLConstBuffer;
+	QList<QSharedPointer<cl::Buffer>> inCLConstBuffer;
 
 	QScopedPointer<sClMeshExport> constantInMeshExportBuffer;
-	QScopedPointer<cl::Buffer> inCLConstMeshExportBuffer;
+	QList<QSharedPointer<cl::Buffer>> inCLConstMeshExportBuffer;
 
 	QByteArray inBuffer;
-	QScopedPointer<cl::Buffer> inCLBuffer;
+	QList<QSharedPointer<cl::Buffer>> inCLBuffer;
 
 	QByteArray inTextureBuffer;
-	QScopedPointer<cl::Buffer> inCLTextureBuffer;
+	QList<QSharedPointer<cl::Buffer>> inCLTextureBuffer;
 
-	QScopedPointer<cl::Image2D> backgroundImage2D;
+	QList<QSharedPointer<cl::Image2D>> backgroundImage2D;
 	QScopedArrayPointer<cl_uchar4> backgroungImageBuffer;
 
 	QScopedPointer<cOpenClDynamicData> dynamicData;
@@ -134,6 +137,7 @@ private:
 	bool autoRefreshMode;
 	bool monteCarlo;
 	bool meshExportMode;
+	double reservedGpuTime;
 
 #endif
 
@@ -141,6 +145,7 @@ signals:
 	void updateProgressAndStatus(const QString &text, const QString &progressText, double progress);
 	void updateImage();
 	void updateStatistics(cStatistics);
+	void sendRenderedTilesList(QList<sRenderedTileData>);
 };
 
 #endif /* MANDELBULBER2_SRC_OPENCL_ENGINE_RENDER_FRACTAL_H_ */
